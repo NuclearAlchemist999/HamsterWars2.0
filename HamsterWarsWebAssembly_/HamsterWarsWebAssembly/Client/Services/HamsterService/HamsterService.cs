@@ -13,9 +13,30 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
         }
         public List<Hamster> Hamsters { get; set; } = new List<Hamster>();
 
-        public Task<Hamster> GetHamster(int id)
+        public async Task AddHamster(Hamster hamster)
         {
-            throw new NotImplementedException();
+            var result = await _http.PostAsJsonAsync("api/hamsters", hamster);
+            await SetHamsters(result);
+        }
+
+        public async Task DeleteHamster(int id)
+        {
+            var result = await _http.DeleteAsync($"api/hamsters/{id}");
+            await SetHamsters(result);
+        }
+
+        private async Task SetHamsters(HttpResponseMessage result)
+        {
+            var response = await result.Content.ReadFromJsonAsync<List<Hamster>>();
+            Hamsters = response;
+        }
+
+        public async Task<Hamster> GetHamster(int id)
+        {
+            var result = await _http.GetFromJsonAsync<Hamster>($"api/hamsters/{id}");
+            if (result != null)
+                return result;
+            throw new Exception("Hamster not found.");
         }
 
         public async Task GetHamsters()
@@ -23,6 +44,12 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
             var result = await _http.GetFromJsonAsync<List<Hamster>>("api/hamsters");
             if (result != null)
                 Hamsters = result;
+        }
+
+        public async Task UpdateHamster(Hamster hamster)
+        {
+            var result = await _http.PutAsJsonAsync($"api/hamsters/{hamster.Id}", hamster);
+            await SetHamsters(result);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿@page "/gallery"
 @inject IHamsterService _hamster
+@inject NavigationManager _nav
 
 <table class="table">
     <thead>
@@ -19,12 +20,15 @@
                 <td>@hamster.Age</td>
                 <td>@hamster.FavFood</td>
                 <td>@hamster.FavThing</td>
-                <td></td>
+                <td>
+                    <button class="btn btn-primary" @onclick="(() => ShowHamster(hamster.Id))"><i class="oi oi-pencil"></i></button>
+                </td>
             </tr>
         }
 
     </tbody>
 </table>
+<button class="btn btn-primary" @onclick="AddHamster">Add hamster</button>
 
 @code {
     protected override async Task OnInitializedAsync()
@@ -32,5 +36,14 @@
         await _hamster.GetHamsters();
     }
 
+    void ShowHamster(int id)
+    {
+        _nav.NavigateTo($"hamster/{id}");
+    }
+
+    void AddHamster()
+    {
+        _nav.NavigateTo("/hamster");
+    }
 
 }
