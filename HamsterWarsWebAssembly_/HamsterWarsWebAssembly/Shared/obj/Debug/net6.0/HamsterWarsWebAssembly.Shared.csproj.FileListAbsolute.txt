@@ -1,0 +1,12 @@
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\bin\Debug\net6.0\HamsterWarsWebAssembly.Shared.deps.json
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\bin\Debug\net6.0\HamsterWarsWebAssembly.Shared.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\bin\Debug\net6.0\HamsterWarsWebAssembly.Shared.pdb
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.csproj.AssemblyReference.cache
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.AssemblyInfoInputs.cache
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.AssemblyInfo.cs
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\refint\HamsterWarsWebAssembly.Shared.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.pdb
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\ref\HamsterWarsWebAssembly.Shared.dll

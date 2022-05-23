@@ -1,0 +1,36 @@
+﻿@page "/gallery"
+@inject IHamsterService _hamster
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Favourite food</th>
+            <th>Favourite thing</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hamster in _hamster.Hamsters)
+        {
+            <tr>
+                <td>@hamster.Name</td>
+                <td>@hamster.Age</td>
+                <td>@hamster.FavFood</td>
+                <td>@hamster.FavThing</td>
+                <td></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await _hamster.GetHamsters();
+    }
+
+
+}
