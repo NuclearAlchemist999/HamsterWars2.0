@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamsterWarsWebAssembly.Server", "HamsterWarsWebAssembly\Server\HamsterWarsWebAssembly.Server.csproj", "{2AE283D7-D3F8-4836-AED0-5958FFF1FFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterWarsWebAssembly.Server", "HamsterWarsWebAssembly\Server\HamsterWarsWebAssembly.Server.csproj", "{2AE283D7-D3F8-4836-AED0-5958FFF1FFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamsterWarsWebAssembly.Client", "HamsterWarsWebAssembly\Client\HamsterWarsWebAssembly.Client.csproj", "{E9C9FCC2-78FA-4E07-A053-BF9FF97F8B86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterWarsWebAssembly.Client", "HamsterWarsWebAssembly\Client\HamsterWarsWebAssembly.Client.csproj", "{E9C9FCC2-78FA-4E07-A053-BF9FF97F8B86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamsterWarsWebAssembly.Shared", "HamsterWarsWebAssembly\Shared\HamsterWarsWebAssembly.Shared.csproj", "{E08A19AE-E864-4C43-A3D3-85A453E91EE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterWarsWebAssembly.Shared", "HamsterWarsWebAssembly\Shared\HamsterWarsWebAssembly.Shared.csproj", "{E08A19AE-E864-4C43-A3D3-85A453E91EE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{EF0C6E7B-FEBF-4968-B204-625163D42489}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{EF0C6E7B-FEBF-4968-B204-625163D42489}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{93F43453-2839-46B9-B76E-9D84DC55DCBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EF0C6E7B-FEBF-4968-B204-625163D42489}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF0C6E7B-FEBF-4968-B204-625163D42489}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF0C6E7B-FEBF-4968-B204-625163D42489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F43453-2839-46B9-B76E-9D84DC55DCBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F43453-2839-46B9-B76E-9D84DC55DCBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F43453-2839-46B9-B76E-9D84DC55DCBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F43453-2839-46B9-B76E-9D84DC55DCBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

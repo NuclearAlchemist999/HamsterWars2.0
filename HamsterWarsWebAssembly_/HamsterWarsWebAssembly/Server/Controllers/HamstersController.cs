@@ -3,6 +3,7 @@ using HamsterWarsWebAssembly.Shared.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Repository.HamsterRepository;
 
 namespace HamsterWarsWebAssembly.Server.Controllers
 {
@@ -10,23 +11,23 @@ namespace HamsterWarsWebAssembly.Server.Controllers
     [ApiController]
     public class HamstersController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IHamsterRepository _hamsterRepo;
 
-        public HamstersController(DataContext context)
+        public HamstersController(IHamsterRepository hamsterRepo)
         {
-            _context = context;
+            _hamsterRepo = hamsterRepo;
         }
         
         [HttpGet]
-        public async Task<ActionResult<List<Hamster>>> GetHamsters()
+        public async Task<IActionResult> GetAllHamsters()
         {
-            var hamsters = await _context.Hamsters.ToListAsync();
+            var hamsters = await _hamsterRepo.GetHamsters();
             return Ok(hamsters);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Hamster>> GetHamster(int id)
+        public async Task<IActionResult> GetOneHamster(int id)
         {
-            var hamster = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == id);
+            var hamster = await _hamsterRepo.GetHamster(id);
             if (hamster == null)
                 return NotFound("No hamster here.");
 
@@ -34,50 +35,33 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Hamster>> AddHamster(Hamster hamster)
+        public async Task<IActionResult> AddHamster(Hamster hamster)
         {
-            _context.Hamsters.Add(hamster);
-            await _context.SaveChangesAsync();
+            await _hamsterRepo.AddHamster(hamster);
 
-            return Ok(await GetDbHamsters());
+            return Ok(await _hamsterRepo.GetHamsters());
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<List<Hamster>>> UpdateHamster(Hamster hamster, int id)
+        public async Task<IActionResult> UpdateHamster(Hamster hamster, int id)
         {
-            var dbHamster = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == id);
+            var dbHamster =await _hamsterRepo.UpdateHamster(hamster, id);
 
             if (dbHamster == null)
                 return NotFound("No hamster here.");
 
-            dbHamster.Name = hamster.Name;
-            dbHamster.Age = hamster.Age;
-            dbHamster.FavFood = hamster.FavFood;
-            dbHamster.FavThing = hamster.FavThing;
-
-            await _context.SaveChangesAsync();
-
-            return Ok(await GetDbHamsters());
+             return Ok(await _hamsterRepo.GetHamsters());
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<List<Hamster>>> DeleteHamster(int id)
+        public async Task<IActionResult> DeleteHamster(int id)
         {
-            var dbHamster = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == id);
+            var dbHamster = await _hamsterRepo.DeleteHamster(id);
 
             if (dbHamster == null)
                 return NotFound("No hamster here.");
 
-           _context.Hamsters.Remove(dbHamster); 
-
-            await _context.SaveChangesAsync();
-
-            return Ok(await GetDbHamsters());
-        }
-
-        private async Task<List<Hamster>> GetDbHamsters()
-        {
-            return await _context.Hamsters.ToListAsync();
+            return Ok(await _hamsterRepo.GetHamsters());
         }
 
     }
