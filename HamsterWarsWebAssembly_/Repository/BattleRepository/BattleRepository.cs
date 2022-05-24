@@ -12,6 +12,9 @@ namespace Repository.BattleRepository
         {
             _context = context;
         }
+
+        
+
         
     }
 }

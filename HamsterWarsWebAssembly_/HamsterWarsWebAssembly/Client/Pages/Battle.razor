@@ -1,5 +1,6 @@
 ﻿@page "/battle"
 @inject IHamsterService _hamster
+@inject NavigationManager _nav
 
 <div class="gallery-top">
     <h2>Battle</h2>
@@ -8,7 +9,7 @@
     @foreach (var hamster in _hamster.Hamsters)
     {
        <div class="hamster-item">
-            <img src="@hamster.ImgName" alt="@hamster.Name">
+            <img src="@hamster.ImgName" alt="@hamster.Name" @onclick="(() => UpdatePoints(hamster.Id))">
             <p>Name: @hamster.Name</p>
             <p>Age: @hamster.Age</p>
             <p>Favourite food: @hamster.FavFood</p>
@@ -19,10 +20,25 @@
 
 
 @code {
+   
 
     protected override async Task OnInitializedAsync()
     {
         await _hamster.GetRandomHamsters();
+    }
+
+    async Task UpdatePoints(int id)
+    {
+        var loser = _hamster.Hamsters.FirstOrDefault(h => h.Id != id);
+
+        var request = new UpdateHamsterRequest
+        {
+            WinnerId = id,
+            LoserId = loser.Id
+        };
+
+        await _hamster.UpdateHamster(request);
+        _nav.NavigateTo("/battle", true);
     }
 
 }

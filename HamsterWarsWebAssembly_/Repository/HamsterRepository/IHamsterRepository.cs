@@ -7,8 +7,11 @@ namespace Repository.HamsterRepository
         Task<List<Hamster>> GetHamsters();
         Task<Hamster> GetHamster(int id);
         Task AddHamster(Hamster hamster);
-        Task<Hamster> UpdateHamster(Hamster hamster, int id);
+        Task UpdateHamster(UpdateHamsterRequest request);
         Task<Hamster> DeleteHamster(int id);
         Task<List<Hamster>> GetTwoRandomHamsters();
+        Task<int> AddGame();
+        Task AddFighter(int hamsterId, int gameId, string winStat);
+
     }
 }

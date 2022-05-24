@@ -10,9 +10,9 @@
         @foreach (var hamster in _hamster.Hamsters)
         {
            <div class="hamster-item">
-           <img src="@hamster.ImgName" alt="@hamster.Name">
-           <p>@hamster.Name</p>     
-           <button class="btn btn-primary" @onclick="(() => ShowHamster(hamster.Id))"><i class="oi oi-pencil"></i></button>
+               <img src="@hamster.ImgName" alt="@hamster.Name">
+               <p>@hamster.Name</p>     
+               <button type="button" class="btn btn-danger" @onclick="(() => DeleteHamster(hamster.Id))">Delete hamster</button>
            </div> 
             
         }
@@ -32,6 +32,12 @@
     void AddHamster()
     {
         _nav.NavigateTo("/hamster");
+    }
+
+    async Task DeleteHamster(int id)
+    {
+        await _hamster.DeleteHamster(id);
+        _nav.NavigateTo("gallery");
     }
 
 }

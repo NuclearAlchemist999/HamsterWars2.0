@@ -46,10 +46,9 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
                 Hamsters = result;
         }
 
-        public async Task UpdateHamster(Hamster hamster)
+        public async Task UpdateHamster(UpdateHamsterRequest request)
         {
-            var result = await _http.PutAsJsonAsync($"api/hamsters/{hamster.Id}", hamster);
-            await SetHamsters(result);
+            await _http.PutAsJsonAsync($"api/hamsters", request);
         }
 
         public async Task GetRandomHamsters()

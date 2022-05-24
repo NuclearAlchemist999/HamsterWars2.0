@@ -35,22 +35,26 @@ namespace Repository.HamsterRepository
             await _context.SaveChangesAsync();   
         }
 
-        public async Task<Hamster> UpdateHamster(Hamster hamster, int id)
+        public async Task UpdateHamster(UpdateHamsterRequest request)
         {
-            var dbHamster = await SearchHamster(id);
+            string winStat = "";
+            int gameId = await AddGame();
+            var loser = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == request.LoserId);
 
-            if (dbHamster != null)
+            if (loser != null)
             {
-                dbHamster.Name = hamster.Name;
-                dbHamster.Age = hamster.Age;
-                dbHamster.FavFood = hamster.FavFood;
-                dbHamster.FavThing = hamster.FavThing;
-
-                await _context.SaveChangesAsync();
-
+                winStat = "Loser";
+                loser.Losses++;
+                loser.Games++;
+                await AddFighter(loser.Id, gameId, winStat);
             }
-
-            return dbHamster;
+            var winner = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == request.WinnerId);
+            winner.Wins++;
+            winner.Games++;
+            
+            winStat = "Winner";
+            
+            await AddFighter(winner.Id, gameId, winStat);
             
         }
 
@@ -71,6 +75,33 @@ namespace Repository.HamsterRepository
         {
             var hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
             return hamsters;
+        }
+
+        public async Task<int> AddGame()
+        {
+            var game = new Game
+            {
+                TimeStamp = DateTime.Now
+            };
+
+            _context.Games.Add(game);
+            await _context.SaveChangesAsync();
+
+            return game.Id;
+
+        }
+
+        public async Task AddFighter(int hamsterId, int gameId, string winStat)
+        {
+            var fighter = new HamsterGame
+            {
+                HamsterId = hamsterId,
+                GameId = gameId,
+                WinStatus = winStat
+            };
+
+            _context.Hamsters_Games.Add(fighter);
+            await _context.SaveChangesAsync();
         }
     }
 }
