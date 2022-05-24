@@ -66,5 +66,11 @@ namespace Repository.HamsterRepository
             }
             return dbHamster;
         }
+
+        public async Task<List<Hamster>> GetTwoRandomHamsters()
+        {
+            var hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
+            return hamsters;
+        }
     }
 }

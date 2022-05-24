@@ -63,6 +63,12 @@ namespace HamsterWarsWebAssembly.Server.Controllers
 
             return Ok(await _hamsterRepo.GetHamsters());
         }
+        [HttpGet("random")]
+        public async Task<IActionResult> RandomHamsters()
+        {
+            var hamsters = await _hamsterRepo.GetTwoRandomHamsters();
+            return Ok(hamsters);
+        }
 
     }
 }
