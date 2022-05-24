@@ -1,7 +1,10 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400&display=swap');
 
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Exo 2', sans-serif;
+    background-color: rgb(8, 11, 45);
+    color: rgb(145, 172, 252);
 }
 
 h1:focus {
@@ -62,3 +65,73 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.hamster-container {
+    display: grid;
+    grid-template-columns: repeat(3, 370px);
+    margin: 2.5rem auto;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hamster-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -5px 5px 10px rgb(161, 155, 230);
+    border-radius: 0px 0px 8px 8px;
+    transition: all 0.3s ease;
+    background-color: rgb(55, 40, 85);
+    border-radius: 8px;
+}
+
+    .hamster-item img {
+        width: 370px;
+        height: 300px;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .hamster-item button {
+        margin-bottom: 1.2rem;
+    }
+
+    .hamster-item:hover {
+        transform: translateY(-5px);
+    }
+
+.battle-container {
+    display: grid;
+    grid-template-columns: repeat(2, 370px);
+    margin: 2.5rem auto;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.gallery-top {
+    text-align: center;
+}
+
+.start-container {
+    display: grid;
+    grid-template-columns: repeat(1, 570px);
+    margin-top: 0.2rem;
+    justify-content: center;
+}
+
+    .start-container img {
+        width: 470px;
+        height: 410px;
+    }
+
+.link-style a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    color: rgb(195, 161, 234)
+}
+
+    .link-style a:hover {
+        color: rgb(150, 102, 206)
+    }
+
+

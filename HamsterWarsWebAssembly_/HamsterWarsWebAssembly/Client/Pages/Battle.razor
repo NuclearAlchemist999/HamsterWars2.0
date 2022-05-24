@@ -1,0 +1,28 @@
+﻿@page "/battle"
+@inject IHamsterService _hamster
+
+<div class="gallery-top">
+    <h2>Battle</h2>
+</div>
+<div class="battle-container">
+    @foreach (var hamster in _hamster.Hamsters)
+    {
+       <div class="hamster-item">
+            <img src="@hamster.ImgName" alt="@hamster.Name">
+            <p>Name: @hamster.Name</p>
+            <p>Age: @hamster.Age</p>
+            <p>Favourite food: @hamster.FavFood</p>
+            <p>Favourite thing: @hamster.FavThing</p>
+        </div>
+    }
+</div>
+
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await _hamster.GetRandomHamsters();
+    }
+
+}

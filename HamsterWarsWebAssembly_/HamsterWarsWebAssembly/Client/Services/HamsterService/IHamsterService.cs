@@ -10,6 +10,7 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
         Task AddHamster(Hamster hamster);
         Task UpdateHamster(Hamster hamster);
         Task DeleteHamster(int id);
+        Task GetRandomHamsters();
 
     }
 }
