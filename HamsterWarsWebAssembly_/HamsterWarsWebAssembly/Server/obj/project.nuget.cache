@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EL2rz03gASGmcQYK4LOa8lHv+IZNZJDHssLHYLgczmE+215/e9Z0Yx/puqheLz1X2QeJFmFcBEV3Wf4eCdqheg==",
+  "dgSpecHash": "IyiWCGiepGEspOJ0PAPfXKq0FANHqIHD7Z7CDSSBTZmuEBSJLxfLWXIlMsahDbRh4IW7p2g368ZI+DbFOCYSRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\HamsterWarsWebAssembly.Server.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Lobson\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

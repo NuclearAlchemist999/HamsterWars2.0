@@ -4,6 +4,7 @@ namespace Repository.BattleRepository
 {
     public interface IBattleRepository
     {
-        
+        Task<int> AddGame();
+        Task<List<JoinModel>> GetFighters(int id);
     }
 }

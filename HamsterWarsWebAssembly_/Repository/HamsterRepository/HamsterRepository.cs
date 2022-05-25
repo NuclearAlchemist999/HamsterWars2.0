@@ -38,7 +38,7 @@ namespace Repository.HamsterRepository
         public async Task UpdateHamster(UpdateHamsterRequest request)
         {
             string winStat = "";
-            int gameId = await AddGame();
+     
             var loser = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == request.LoserId);
 
             if (loser != null)
@@ -46,16 +46,16 @@ namespace Repository.HamsterRepository
                 winStat = "Loser";
                 loser.Losses++;
                 loser.Games++;
-                await AddFighter(loser.Id, gameId, winStat);
+                await AddFighter(loser.Id, request.GameId, winStat);
             }
             var winner = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == request.WinnerId);
             winner.Wins++;
             winner.Games++;
-            
+       
             winStat = "Winner";
-            
-            await AddFighter(winner.Id, gameId, winStat);
-            
+
+            await AddFighter(winner.Id, request.GameId, winStat);
+
         }
 
         public async Task<Hamster> DeleteHamster(int id)
@@ -75,20 +75,6 @@ namespace Repository.HamsterRepository
         {
             var hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
             return hamsters;
-        }
-
-        public async Task<int> AddGame()
-        {
-            var game = new Game
-            {
-                TimeStamp = DateTime.Now
-            };
-
-            _context.Games.Add(game);
-            await _context.SaveChangesAsync();
-
-            return game.Id;
-
         }
 
         public async Task AddFighter(int hamsterId, int gameId, string winStat)

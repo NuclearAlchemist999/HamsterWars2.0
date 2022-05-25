@@ -821,3 +821,7 @@ C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\Hamste
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Client\obj\Debug\net6.0\refint\HamsterWarsWebAssembly.Client.dll
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Client\obj\Debug\net6.0\HamsterWarsWebAssembly.Client.pdb
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Client\obj\Debug\net6.0\ref\HamsterWarsWebAssembly.Client.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Client\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Client\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Client\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Client\obj\Debug\net6.0\build-gz\7WvSisHe.gz

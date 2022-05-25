@@ -1,5 +1,6 @@
 ﻿using HamsterWarsWebAssembly.Shared.Models;
 using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace HamsterWarsWebAssembly.Client.Services.HamsterService
 {
@@ -48,7 +49,7 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
 
         public async Task UpdateHamster(UpdateHamsterRequest request)
         {
-            await _http.PutAsJsonAsync($"api/hamsters", request);
+             await _http.PutAsJsonAsync($"api/hamsters", request);
         }
 
         public async Task GetRandomHamsters()
@@ -57,5 +58,6 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
             if (result != null)
                 Hamsters = result;
         }
+       
     }
 }

@@ -1,9 +1,32 @@
 ﻿@page "/battle"
+@page "/battle/{id:int}"
 @inject IHamsterService _hamster
+@inject IBattleService _battle
 @inject NavigationManager _nav
 
+
+@if (Id != null)
+{
+    <div class="gallery-top">
+        <h2>Result:</h2>
+    </div>
+    <div class="battle-container">
+        @foreach (var hamster in _battle.Fighters)
+        {
+            <div class="hamster-item">
+                <img src="@hamster.ImgName" alt="@hamster.HamsterName" class="hamster-img">
+                <h3>@hamster.WinStatus</h3>
+                <p>@hamster.HamsterName</p>
+                <p>Games: @hamster.Games</p>
+                <p>Wins: @hamster.Wins</p>
+                <p>Losses: @hamster.Losses</p>
+            </div>
+        }
+    </div>
+}
+
 <div class="gallery-top">
-    <h2>Battle</h2>
+    <h2>@headLine</h2>
 </div>
 <div class="battle-container">
     @foreach (var hamster in _hamster.Hamsters)
@@ -20,25 +43,43 @@
 
 
 @code {
-   
+    [Parameter]
+    public int? Id { get; set; }
+
+    string headLine = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
+        if (Id != null)
+        {
+            headLine = "Next battle";
+            await _battle.GetGame((int)Id);
+        }
+        else
+        {
+            headLine = "Battle";
+        }
+
         await _hamster.GetRandomHamsters();
+        
     }
+
 
     async Task UpdatePoints(int id)
     {
         var loser = _hamster.Hamsters.FirstOrDefault(h => h.Id != id);
+        int gameId = await _battle.AddGame();
 
         var request = new UpdateHamsterRequest
         {
             WinnerId = id,
-            LoserId = loser.Id
+            LoserId = loser.Id,
+            GameId = gameId
         };
 
         await _hamster.UpdateHamster(request);
-        _nav.NavigateTo("/battle", true);
+        
+        _nav.NavigateTo($"/battle/{gameId}", true);
     }
 
 }

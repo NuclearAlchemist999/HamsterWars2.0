@@ -1,4 +1,5 @@
 using HamsterWarsWebAssembly.Client;
+using HamsterWarsWebAssembly.Client.Services.BattleService;
 using HamsterWarsWebAssembly.Client.Services.HamsterService;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -9,5 +10,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<IHamsterService, HamsterService>();
+builder.Services.AddScoped<IBattleService, BattleService>();
 
 await builder.Build().RunAsync();
