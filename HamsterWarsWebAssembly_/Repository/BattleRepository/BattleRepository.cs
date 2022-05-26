@@ -27,6 +27,22 @@ namespace Repository.BattleRepository
 
         }
 
+        public async Task AddFighter(HamsterGame hamster)
+        {
+            var fighter = new HamsterGame
+            {
+                HamsterId = hamster.HamsterId,
+                GameId = hamster.GameId,
+                WinStatus = hamster.WinStatus
+            };
+
+            _context.Hamsters_Games.Add(fighter);
+            await _context.SaveChangesAsync();
+        }
+
+
+
+
         public async Task<List<JoinModel>> GetFighters(int id)
         {
             var join = await (from h in _context.Hamsters

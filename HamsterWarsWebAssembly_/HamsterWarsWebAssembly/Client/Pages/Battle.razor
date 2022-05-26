@@ -61,24 +61,34 @@
         }
 
         await _hamster.GetRandomHamsters();
-        
+
     }
 
 
-    async Task UpdatePoints(int id)
+    async Task UpdatePoints(int winnerId)
     {
-        var loser = _hamster.Hamsters.FirstOrDefault(h => h.Id != id);
         int gameId = await _battle.AddGame();
 
-        var request = new UpdateHamsterRequest
+        var loser =  _hamster.Hamsters.FirstOrDefault(h => h.Id != winnerId);
+        var request1 = new HamsterGame
         {
-            WinnerId = id,
-            LoserId = loser.Id,
-            GameId = gameId
+            GameId = gameId,
+            HamsterId = loser.Id,
+            WinStatus = "Loser"
         };
 
-        await _hamster.UpdateHamster(request);
+        await _hamster.UpdateHamster(request1, loser.Id);
+        await _battle.AddFighter(request1);
         
+        var request2 = new HamsterGame
+        {
+            GameId = gameId,
+            HamsterId = winnerId,
+            WinStatus = "Winner"
+        };
+        await _hamster.UpdateHamster(request2, winnerId);
+        await _battle.AddFighter(request2);
+
         _nav.NavigateTo($"/battle/{gameId}", true);
     }
 

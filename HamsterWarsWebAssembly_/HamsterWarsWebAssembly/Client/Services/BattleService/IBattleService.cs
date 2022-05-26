@@ -7,5 +7,6 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
         List<JoinModel> Fighters { get; set; }
         Task<int> AddGame();
         Task GetGame(int id);
+        Task AddFighter(HamsterGame hamster);
     }
 }

@@ -43,19 +43,13 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             return Ok(await _hamsterRepo.GetHamsters());
         }
 
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateHamster(Hamster hamster, int id)
-        //{
-        //    await _hamsterRepo.UpdateHamster(id);
-
-        //    return Ok();
-        //}
-
-        [HttpPut]
-        public async Task<IActionResult> UpdateHamster(UpdateHamsterRequest request)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateHamster(HamsterGame request, int id)
         {
-            await _hamsterRepo.UpdateHamster(request);
-            return Ok();
+            var hamster = await _hamsterRepo.UpdateHamster(request, id);
+            if (hamster == null)
+                return NotFound("No hamster here.");
+            return Ok(); 
         }
 
         [HttpDelete("{id}")]

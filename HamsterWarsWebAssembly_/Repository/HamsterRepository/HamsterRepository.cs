@@ -20,13 +20,8 @@ namespace Repository.HamsterRepository
 
         public async Task<Hamster> GetHamster(int id)
         {
-            var hamster = await SearchHamster(id);
+            var hamster = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == id);
             return hamster;
-        }
-
-        private async Task<Hamster> SearchHamster(int id)
-        {
-            return await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == id);
         }
 
         public async Task AddHamster(Hamster hamster)
@@ -35,32 +30,28 @@ namespace Repository.HamsterRepository
             await _context.SaveChangesAsync();   
         }
 
-        public async Task UpdateHamster(UpdateHamsterRequest request)
+        public async Task<Hamster> UpdateHamster(HamsterGame request, int id)
         {
-            string winStat = "";
-     
-            var loser = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == request.LoserId);
+            var dbHamster = await GetHamster(id);
 
-            if (loser != null)
+            if (request.WinStatus == "Winner")
             {
-                winStat = "Loser";
-                loser.Losses++;
-                loser.Games++;
-                await AddFighter(loser.Id, request.GameId, winStat);
+                dbHamster.Wins++;
             }
-            var winner = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == request.WinnerId);
-            winner.Wins++;
-            winner.Games++;
-       
-            winStat = "Winner";
+            else
+            {
+                dbHamster.Losses++;
+            }
+            dbHamster.Games++;
+            
+            await _context.SaveChangesAsync();
 
-            await AddFighter(winner.Id, request.GameId, winStat);
-
+            return dbHamster;
+            
         }
-
         public async Task<Hamster> DeleteHamster(int id)
         {
-            var dbHamster = await SearchHamster(id);
+            var dbHamster = await GetHamster(id);
 
             if (dbHamster != null)
             {
@@ -75,19 +66,6 @@ namespace Repository.HamsterRepository
         {
             var hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
             return hamsters;
-        }
-
-        public async Task AddFighter(int hamsterId, int gameId, string winStat)
-        {
-            var fighter = new HamsterGame
-            {
-                HamsterId = hamsterId,
-                GameId = gameId,
-                WinStatus = winStat
-            };
-
-            _context.Hamsters_Games.Add(fighter);
-            await _context.SaveChangesAsync();
         }
     }
 }

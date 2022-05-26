@@ -21,6 +21,14 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             var id = await _battleRepo.AddGame();
             return Ok(id);
         }
+        [HttpPost("Fighter")]
+        public async Task<IActionResult> AddFighter(HamsterGame hamster)
+        {
+            await _battleRepo.AddFighter(hamster);
+            return Ok();
+        }
+
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetGame(int id)
         {

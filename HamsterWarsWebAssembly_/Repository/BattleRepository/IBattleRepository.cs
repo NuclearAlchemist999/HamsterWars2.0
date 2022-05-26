@@ -6,5 +6,6 @@ namespace Repository.BattleRepository
     {
         Task<int> AddGame();
         Task<List<JoinModel>> GetFighters(int id);
+        Task AddFighter(HamsterGame hamster);
     }
 }
