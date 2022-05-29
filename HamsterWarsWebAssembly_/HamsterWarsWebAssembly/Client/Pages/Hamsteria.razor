@@ -1,7 +1,8 @@
 ﻿@page "/hamster"
 @inject IHamsterService _hamster
 @inject NavigationManager _nav
-
+@inject HttpClient _http
+@using System.IO
 
 <h3>Add hamster</h3>
 
@@ -22,6 +23,10 @@
         <label for="favthing">Favourite thing</label>
         <InputText id="favthing" @bind-Value="hamster.FavThing" class="form-control"></InputText>
     </div>
+    <div>
+        <label for="image">Image</label>
+          <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName" accept=".png,.jpg,.jpeg"></InputFile> 
+    </div>
     <br />
     <button type="submit" class="btn btn-primary">Save hamster</button>
     
@@ -35,9 +40,36 @@
 
     Hamster hamster = new Hamster();
 
+    IBrowserFile pendingFile;
+    private string? fileName;
+
+    void LoadFile(InputFileChangeEventArgs e)
+    {
+        pendingFile = e.File;
+        fileName = e.File.Name;
+    }
+
+    async Task SaveFile()
+    {
+        Stream stream = pendingFile.OpenReadStream();
+        MemoryStream ms = new MemoryStream();
+        await stream.CopyToAsync(ms);
+        stream.Close();
+
+        UploadedFile uploadedFile = new UploadedFile();
+        var storedFileName = string.Format(@"{0}.jpg", Guid.NewGuid());
+        uploadedFile.FileName = storedFileName;
+        uploadedFile.FileContent = ms.ToArray();
+
+        await _http.PostAsJsonAsync<UploadedFile>("/api/fileupload", uploadedFile);
+    }
+
+
     async Task HandleSubmit()
     {
+        await SaveFile();
         await _hamster.AddHamster(hamster);
+        
         _nav.NavigateTo("gallery");
     }
 
