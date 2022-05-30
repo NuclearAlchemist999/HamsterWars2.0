@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kAO0ljOLRIkM3iXPRLnVtCgrTXW/tyl/ld+8AiVtiRI=",
+  "Hash": "s0TH12R8mc5a+Jrs3QhnosYM4AWarJFyLofAmiBvq14=",
   "Source": "HamsterWarsWebAssembly.Server",
   "BasePath": "_content/HamsterWarsWebAssembly.Server",
   "Mode": "Default",
@@ -24,6 +24,13 @@
       "Source": "HamsterWarsWebAssembly.Client",
       "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\wwwroot\\",
       "BasePath": "/",
+      "Pattern": "**"
+    },
+    {
+      "Name": "HamsterWarsWebAssembly.Server\\wwwroot",
+      "Source": "HamsterWarsWebAssembly.Server",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\",
+      "BasePath": "_content/HamsterWarsWebAssembly.Server",
       "Pattern": "**"
     }
   ],
@@ -6931,6 +6938,23 @@
       "OriginalItemSpec": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\obj\\Debug\\net6.0\\scopedcss\\bundle\\HamsterWarsWebAssembly.Client.styles.css"
     },
     {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\wwwroot\\appsettings.json",
+      "SourceId": "HamsterWarsWebAssembly.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\appsettings.json"
+    },
+    {
       "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\wwwroot\\Content\\images\\logos\\hamsterwarsbadass-transparent.png",
       "SourceId": "HamsterWarsWebAssembly.Client",
       "SourceType": "Project",
@@ -7286,6 +7310,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\images\\71641891-3677-43f1-9518-5df157135f7d.jpg",
+      "SourceId": "HamsterWarsWebAssembly.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\",
+      "BasePath": "_content/HamsterWarsWebAssembly.Server",
+      "RelativePath": "images/71641891-3677-43f1-9518-5df157135f7d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\71641891-3677-43f1-9518-5df157135f7d.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\images\\hamster-7.jpg",
+      "SourceId": "HamsterWarsWebAssembly.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\",
+      "BasePath": "_content/HamsterWarsWebAssembly.Server",
+      "RelativePath": "images/hamster-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\hamster-7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\images\\hamster-8.jpg",
+      "SourceId": "HamsterWarsWebAssembly.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\",
+      "BasePath": "_content/HamsterWarsWebAssembly.Server",
+      "RelativePath": "images/hamster-8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\hamster-8.jpg"
     }
   ]
 }

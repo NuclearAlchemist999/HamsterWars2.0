@@ -2,7 +2,8 @@
 @inject IHamsterService _hamster
 @inject NavigationManager _nav
 @inject HttpClient _http
-@using System.IO
+@inject IConfiguration _config
+@using System.IO;
 
 <h3>Add hamster</h3>
 
@@ -25,9 +26,10 @@
     </div>
     <div>
         <label for="image">Image</label>
-          <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName" accept=".png,.jpg,.jpeg"></InputFile> 
+          <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName"></InputFile> 
     </div>
     <br />
+    <p style="color: firebrick; font-size: 1.3rem;">@errorMessage</p>
     <button type="submit" class="btn btn-primary">Save hamster</button>
     
 
@@ -40,34 +42,71 @@
 
     Hamster hamster = new Hamster();
 
-    IBrowserFile pendingFile;
+    private long maxFileSize = 1024 * 500;
+    IBrowserFile selectedFile;
     private string? fileName;
+    private string? dbFileName;
+    private string errorMessage = string.Empty;
 
-    void LoadFile(InputFileChangeEventArgs e)
+    private void LoadFile(InputFileChangeEventArgs e)
     {
-        pendingFile = e.File;
+        selectedFile = e.File;
         fileName = e.File.Name;
+        dbFileName = string.Format(@"{0}.jpg", Guid.NewGuid());
+        string dbPath = $"images/{dbFileName}";
+        hamster.ImgName = dbPath;
+
     }
 
-    async Task SaveFile()
+    bool CheckValidTypes()
     {
-        Stream stream = pendingFile.OpenReadStream();
-        MemoryStream ms = new MemoryStream();
-        await stream.CopyToAsync(ms);
-        stream.Close();
+        string[] vaildTypes = { "png", "jpg", "jpeg" };
+        string fileExtension = fileName.Split('.').Last();
+        return vaildTypes.Contains(fileExtension.ToLower());
+        
+    }
 
-        UploadedFile uploadedFile = new UploadedFile();
-        var storedFileName = string.Format(@"{0}.jpg", Guid.NewGuid());
-        uploadedFile.FileName = storedFileName;
-        uploadedFile.FileContent = ms.ToArray();
-
-        await _http.PostAsJsonAsync<UploadedFile>("/api/fileupload", uploadedFile);
+    private async void SaveFile()
+    {
+        using (var ms = new MemoryStream())
+        {
+            await selectedFile.OpenReadStream().CopyToAsync(ms);
+            var uploadedFile = new UploadedFile();
+         
+            uploadedFile.FileName = dbFileName;
+            uploadedFile.FileContent = ms.ToArray();
+      
+            await _http.PostAsJsonAsync<UploadedFile>(_config["ApiBaseUrl"] + "FileUpload", uploadedFile);
+       
+        }
+      
     }
 
 
     async Task HandleSubmit()
     {
-        await SaveFile();
+        if (fileName == null)
+        {
+            errorMessage = "Please select a file.";
+            return;
+        }
+
+        bool isValid = CheckValidTypes();
+   
+        if (!isValid)
+        {
+            errorMessage = "The file type is not allowed.";
+            return;
+        }
+
+        if (selectedFile.Size > maxFileSize)
+        {
+            errorMessage = "The file is too large.";
+            return;
+        }
+
+
+        SaveFile();
         await _hamster.AddHamster(hamster);
         
         _nav.NavigateTo("gallery");

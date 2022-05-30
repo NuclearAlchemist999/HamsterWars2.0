@@ -1,6 +1,8 @@
 {
   "cacheBootResources": true,
-  "config": [ ],
+  "config": [
+    "appsettings.json"
+  ],
   "debugBuild": true,
   "entryAssembly": "HamsterWarsWebAssembly.Client",
   "icuDataMode": 0,
@@ -198,14 +200,14 @@
       "netstandard.dll": "sha256-qpOz\/RBwhlIYfaE2GDEmjiproxkvSf2b9GeqHxvH+lg=",
       "System.Private.CoreLib.dll": "sha256-sfzSZ3YKC2rpF77TVOKLuPgQag93QXr9U4AUc9d\/LKA=",
       "HamsterWarsWebAssembly.Shared.dll": "sha256-PN3\/FAdMR0jNVLoXXF27jzKHtzcjUADtM0QU\/WWfhkU=",
-      "HamsterWarsWebAssembly.Client.dll": "sha256-FqNV6Pv\/FPq\/DCd7IxUXoScbjt5mUyF4gA7rBGpSRXs="
+      "HamsterWarsWebAssembly.Client.dll": "sha256-VkdLdrBB5XAax27a68w9X3Pfb6SfVO\/urj7JUYbbZgM="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "HamsterWarsWebAssembly.Shared.pdb": "sha256-cl8dZMl0yCmWh6H\/uz7O\/syt9h6H2J2A89t6k+i87gs=",
-      "HamsterWarsWebAssembly.Client.pdb": "sha256-Jcjj6tHWtIP6grvi55j4Win8BpApRbD2XwXPFFlIRoo="
+      "HamsterWarsWebAssembly.Client.pdb": "sha256-hOoWie3U4B8V\/QVMpGYucO7FKfNC0RHBMcv1Q\/tzVsc="
     },
     "runtime": {
       "dotnet.6.0.5.9z5m8g8hua.js": "sha256-783uOt0jgblQfP6Yz5TJeuW2xxtl6UHZQPngZtCz79U=",

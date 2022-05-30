@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F8D5PSSK6+gvttxZa94uJdDru59K0pQ47M1u2sln0zw=",
+  "Hash": "ie0RetjuVauixuDUW/xaU6w8yaNGFiRJyTsdyUk7bAk=",
   "Source": "HamsterWarsWebAssembly.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -6934,6 +6934,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HamsterWarsWebAssembly.Client.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\wwwroot\\appsettings.json",
+      "SourceId": "HamsterWarsWebAssembly.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\appsettings.json"
     },
     {
       "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\wwwroot\\Content\\images\\logos\\hamsterwarsbadass-transparent.png",
