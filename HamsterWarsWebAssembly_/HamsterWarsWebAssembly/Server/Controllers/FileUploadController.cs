@@ -17,9 +17,8 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostFile(UploadedFile uploadedFile)
+        public async Task<IActionResult> PostFile(UploadedFile uploadedFile)
         {
-            // var path = $"{_env.WebRootPath}\\{uploadedFile.FileName}";
             var path = $"wwwroot/images/{uploadedFile.FileName}";
             await using var fs = new FileStream(path, FileMode.Create);
             fs.Write(uploadedFile.FileContent, 0, uploadedFile.FileContent.Length);

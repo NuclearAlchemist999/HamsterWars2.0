@@ -55,7 +55,15 @@ namespace Repository.HamsterRepository
 
             if (dbHamster != null)
             {
+                string dbPath = dbHamster.ImgName;
+                string path = $"wwwroot{dbPath}";
+                
                 _context.Hamsters.Remove(dbHamster);
+                
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
 
                 await _context.SaveChangesAsync();
             }

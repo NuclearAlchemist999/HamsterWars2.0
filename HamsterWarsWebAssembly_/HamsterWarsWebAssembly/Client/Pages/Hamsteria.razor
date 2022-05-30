@@ -5,35 +5,42 @@
 @inject IConfiguration _config
 @using System.IO;
 
-<h3>Add hamster</h3>
+<PageTitle>Add hamster</PageTitle>
 
-<EditForm Model = "hamster" OnSubmit="HandleSubmit">
+<h3>Add a new hamster</h3>
+
+<EditForm Model="@hamster" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
     <div>
         <label for="name">Name</label>
         <InputText id="name" @bind-Value="hamster.Name" class="form-control"></InputText>
+        <ValidationMessage For="@(()=> hamster.Name)" />
     </div>
     <div>
         <label for="age">Age</label>
         <InputNumber id="age" @bind-Value="hamster.Age" class="form-control"></InputNumber>
+        <ValidationMessage For="@(()=> hamster.Age)" />
     </div>
     <div>
-        <label for="favfood">Favourite food</label>
-        <InputText id="favfood" @bind-Value="hamster.FavFood" class="form-control"></InputText>
+        <label for="fav-food">Favourite food</label>
+        <InputText id="fav-food" @bind-Value="hamster.FavFood" class="form-control"></InputText>
+        <ValidationMessage For="@(()=> hamster.FavFood)" />
     </div>
     <div>
-        <label for="favthing">Favourite thing</label>
-        <InputText id="favthing" @bind-Value="hamster.FavThing" class="form-control"></InputText>
+        <label for="fav-thing">Favourite thing</label>
+        <InputText id="fav-thing" @bind-Value="hamster.FavThing" class="form-control"></InputText>
+        <ValidationMessage For="@(()=> hamster.FavThing)" />
     </div>
+    <br />
     <div>
         <label for="image">Image</label>
-          <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName"></InputFile> 
+          <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName" accept=".png,.jpg,.jpeg"></InputFile> 
     </div>
+    
     <br />
     <p style="color: firebrick; font-size: 1.3rem;">@errorMessage</p>
     <button type="submit" class="btn btn-primary">Save hamster</button>
     
-
-
 </EditForm>
 
 @code {
@@ -53,7 +60,7 @@
         selectedFile = e.File;
         fileName = e.File.Name;
         dbFileName = string.Format(@"{0}.jpg", Guid.NewGuid());
-        string dbPath = $"images/{dbFileName}";
+        string dbPath = $"/images/{dbFileName}";
         hamster.ImgName = dbPath;
 
     }
@@ -75,9 +82,8 @@
          
             uploadedFile.FileName = dbFileName;
             uploadedFile.FileContent = ms.ToArray();
-      
-            await _http.PostAsJsonAsync<UploadedFile>(_config["ApiBaseUrl"] + "FileUpload", uploadedFile);
-       
+           
+            await _http.PostAsJsonAsync<UploadedFile>("api/fileupload", uploadedFile);
         }
       
     }
