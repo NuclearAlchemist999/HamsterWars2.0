@@ -21,13 +21,16 @@ namespace Repository.HamsterRepository
         public async Task<Hamster> GetHamster(int id)
         {
             var hamster = await _context.Hamsters.FirstOrDefaultAsync(h => h.Id == id);
+            
             return hamster;
         }
 
-        public async Task AddHamster(Hamster hamster)
+        public async Task<Hamster> AddHamster(Hamster hamster)
         {
             _context.Hamsters.Add(hamster);
-            await _context.SaveChangesAsync();   
+            await _context.SaveChangesAsync();
+            return hamster;
+            
         }
 
         public async Task<Hamster> UpdateHamster(HamsterGame request, int id)

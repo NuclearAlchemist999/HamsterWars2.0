@@ -400,6 +400,18 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "Toolbelt.Blazor.HttpClientInterceptor/10.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "3.2.0-preview2.20160.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        }
+      },
       "HamsterWarsWebAssembly.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -802,6 +814,18 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "Toolbelt.Blazor.HttpClientInterceptor/10.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "3.2.0-preview2.20160.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
         }
       },
       "HamsterWarsWebAssembly.Shared/1.0.0": {
@@ -1603,6 +1627,21 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Toolbelt.Blazor.HttpClientInterceptor/10.1.0": {
+      "sha512": "rHJzJzBm3rYchA2Lzb7Fr46Xspr2cbE4p9jIYvj60rl+x5+5oiOh3QT2Cmn/u8/zuQ914k3AepH/FdFS1UfDew==",
+      "type": "package",
+      "path": "toolbelt.blazor.httpclientinterceptor/10.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll",
+        "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.xml",
+        "nupkg-icon.png",
+        "toolbelt.blazor.httpclientinterceptor.10.1.0.nupkg.sha512",
+        "toolbelt.blazor.httpclientinterceptor.nuspec"
+      ]
+    },
     "HamsterWarsWebAssembly.Shared/1.0.0": {
       "type": "project",
       "path": "../Shared/HamsterWarsWebAssembly.Shared.csproj",
@@ -1614,7 +1653,8 @@
       "HamsterWarsWebAssembly.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.5",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.5",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "Toolbelt.Blazor.HttpClientInterceptor >= 10.1.0"
     ]
   },
   "packageFolders": {
@@ -1677,6 +1717,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "Toolbelt.Blazor.HttpClientInterceptor": {
+            "target": "Package",
+            "version": "[10.1.0, )"
           }
         },
         "imports": [

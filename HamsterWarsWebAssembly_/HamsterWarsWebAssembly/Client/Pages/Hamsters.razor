@@ -18,7 +18,8 @@
         }
 </div>
 
-@code {
+@code {    
+
     protected override async Task OnInitializedAsync()
     {
         await _hamster.GetHamsters();

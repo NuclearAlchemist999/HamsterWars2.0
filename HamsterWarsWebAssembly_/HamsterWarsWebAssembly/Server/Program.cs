@@ -1,4 +1,5 @@
 using DataAccess.Data;
+using HamsterWarsWebAssembly.Server.Extensions;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Repository.BattleRepository;
@@ -16,8 +17,9 @@ builder.Services.AddScoped<IHamsterRepository, HamsterRepository>();
 builder.Services.AddScoped<IBattleRepository, BattleRepository>();
 
 var app = builder.Build();
+app.ConfigureExceptionHandler();
 
-// Configure the HTTP request pipeline.
+//Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();

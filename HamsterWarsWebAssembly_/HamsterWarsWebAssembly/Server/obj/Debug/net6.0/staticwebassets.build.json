@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6IWAxH9vD3D/EylcUREDONvb4QI4VSRUhoa2lwwY5so=",
+  "Hash": "AMzc7PaQKDwFegYE9B3Y9in/uxygJGTwI7CmQbFDOmE=",
   "Source": "HamsterWarsWebAssembly.Server",
   "BasePath": "_content/HamsterWarsWebAssembly.Server",
   "Mode": "Default",
@@ -3470,6 +3470,23 @@
       "OriginalItemSpec": "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.5\\runtimes\\browser-wasm\\lib\\net6.0\\System.Xml.XPath.XDocument.dll"
     },
     {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Toolbelt.Blazor.HttpClientInterceptor.dll",
+      "SourceId": "HamsterWarsWebAssembly.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Toolbelt.Blazor.HttpClientInterceptor.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lobson\\.nuget\\packages\\toolbelt.blazor.httpclientinterceptor\\10.1.0\\lib\\netstandard2.1\\Toolbelt.Blazor.HttpClientInterceptor.dll"
+    },
+    {
       "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\WindowsBase.dll",
       "SourceId": "HamsterWarsWebAssembly.Client",
       "SourceType": "Project",
@@ -5287,6 +5304,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Linq.Parallel.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\obj\\Debug\\net6.0\\build-gz\\Lrh4ASqe.gz",
+      "SourceId": "HamsterWarsWebAssembly.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Toolbelt.Blazor.HttpClientInterceptor.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Toolbelt.Blazor.HttpClientInterceptor.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Toolbelt.Blazor.HttpClientInterceptor.dll"
     },
     {
       "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\obj\\Debug\\net6.0\\build-gz\\lyNfq9ly.gz",
@@ -7310,6 +7344,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\images\\da1ed563-5ced-4eaf-aa8d-8b75975fa3d7.jpg",
+      "SourceId": "HamsterWarsWebAssembly.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Server\\wwwroot\\",
+      "BasePath": "_content/HamsterWarsWebAssembly.Server",
+      "RelativePath": "images/da1ed563-5ced-4eaf-aa8d-8b75975fa3d7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\da1ed563-5ced-4eaf-aa8d-8b75975fa3d7.jpg"
     }
   ]
 }

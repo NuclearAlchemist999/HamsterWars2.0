@@ -33,6 +33,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-i3Tuz9JFTwJkZ9+s\/BT1Vpbtl5naeHj\/5Aq06H+nd\/s=",
       "Newtonsoft.Json.dll": "sha256-cs8pHUurDt0IqbB8YXPh560au3q3J\/1wRL9jBddRVmE=",
       "System.IO.Pipelines.dll": "sha256-6+E55JXedimdw1c1bDtVg4K7XuWjVWVTifH8QpfzXSY=",
+      "Toolbelt.Blazor.HttpClientInterceptor.dll": "sha256-aA1mjyo0t1o\/J129iwDkkaAGSK0Ofw+t9di28Zrvhvg=",
       "Microsoft.CSharp.dll": "sha256-DTiQAlsyxleRzVYl5Q95n\/wAbxwMf5CzRWBGSNndce4=",
       "Microsoft.VisualBasic.Core.dll": "sha256-XpwlSCHsRJfMGP3vd1Zq\/e+KsMTv3frR\/Ftx27lsqxU=",
       "Microsoft.VisualBasic.dll": "sha256-2YPfWC1cxNby7+lFjcW6I0FjJO+1hQD2Tx9pAslpOaI=",
@@ -199,15 +200,15 @@
       "mscorlib.dll": "sha256-ghlJNtzzYlKIliGPuf0A0Yu6dmLycSx3F9uyeddFb\/g=",
       "netstandard.dll": "sha256-qpOz\/RBwhlIYfaE2GDEmjiproxkvSf2b9GeqHxvH+lg=",
       "System.Private.CoreLib.dll": "sha256-sfzSZ3YKC2rpF77TVOKLuPgQag93QXr9U4AUc9d\/LKA=",
-      "HamsterWarsWebAssembly.Shared.dll": "sha256-H8CMu\/PupP06llfBbMvMXwBVkObw8nkFPo7E2L92Oks=",
-      "HamsterWarsWebAssembly.Client.dll": "sha256-7BdR5AQgeBlHmHdJ6E255T6RRznqOMlgnSc3RGr6A9A="
+      "HamsterWarsWebAssembly.Shared.dll": "sha256-6C1oSLKKF3rlg49cMluw0AjNM\/LQtFk7dv3sB5YMNFM=",
+      "HamsterWarsWebAssembly.Client.dll": "sha256-fJ+SLUVHmDFtkl04ob92hto9vkQUYJaC2PvEf+vRa4k="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "HamsterWarsWebAssembly.Shared.pdb": "sha256-jgrqnN9IrQabL7jkvDUbv+wfickmf6dmWe2k1X\/VlRs=",
-      "HamsterWarsWebAssembly.Client.pdb": "sha256-c1SFRsYktYZmIbGF3nyh2M4KMQUj\/WH0RZn2lJtiGA8="
+      "HamsterWarsWebAssembly.Shared.pdb": "sha256-QfdJxdPivIOlS1hE1xS7gTvrTn10MU3R6at8nFcHn9Q=",
+      "HamsterWarsWebAssembly.Client.pdb": "sha256-8+RdiZRvaOlFroPX0zOzonFWTkZXzrA2gwk0Dvchduk="
     },
     "runtime": {
       "dotnet.6.0.5.9z5m8g8hua.js": "sha256-783uOt0jgblQfP6Yz5TJeuW2xxtl6UHZQPngZtCz79U=",

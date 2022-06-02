@@ -7,7 +7,27 @@
 
     <main>
         <article class="content px-4">
-            @Body
+            <ErrorBoundary @ref="errorBoundary">
+                <ChildContent>
+                    @Body
+                </ChildContent>
+                <ErrorContent Context = "Exception" >
+                    <div class="alert alert-primary">
+                        <h2>Something went wrong. =(</h2>
+                        <h3>@Exception.Message</h3>
+                    </div>    
+                </ErrorContent>
+             </ErrorBoundary> 
         </article>
     </main>
 </div>
+
+@code 
+{
+    ErrorBoundary? errorBoundary;
+
+    protected override void OnParametersSet()
+    {
+        errorBoundary?.Recover();
+    }
+}

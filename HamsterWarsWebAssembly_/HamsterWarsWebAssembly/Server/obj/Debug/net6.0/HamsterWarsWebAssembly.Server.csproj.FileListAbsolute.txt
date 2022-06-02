@@ -84,3 +84,4 @@ C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\Hamste
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Server\bin\Debug\net6.0\Repository.dll
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Server\bin\Debug\net6.0\Repository.pdb
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Server\bin\Debug\net6.0\Toolbelt.Blazor.HttpClientInterceptor.dll

@@ -45,7 +45,7 @@ namespace Repository.BattleRepository
 
         public async Task<List<JoinModel>> GetFighters(int id)
         {
-            var join = await (from h in _context.Hamsters
+            var fighters = await (from h in _context.Hamsters
                               join hg in _context.Hamsters_Games on h.Id equals hg.HamsterId
                               join g in _context.Games on hg.GameId equals g.Id
                               where g.Id == id
@@ -60,7 +60,9 @@ namespace Repository.BattleRepository
                                   WinStatus = hg.WinStatus
 
                               }).ToListAsync();
-            return join;
+            
+
+            return fighters;
 
         }
 

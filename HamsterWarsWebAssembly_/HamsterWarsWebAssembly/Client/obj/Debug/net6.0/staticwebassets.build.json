@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ie0RetjuVauixuDUW/xaU6w8yaNGFiRJyTsdyUk7bAk=",
+  "Hash": "SoOpyrVuVosEV4JfTd6bPHnNgYEmt6L1u7LvITyaWd0=",
   "Source": "HamsterWarsWebAssembly.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -3451,6 +3451,23 @@
       "OriginalItemSpec": "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.5\\runtimes\\browser-wasm\\lib\\net6.0\\System.Xml.XPath.XDocument.dll"
     },
     {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Toolbelt.Blazor.HttpClientInterceptor.dll",
+      "SourceId": "HamsterWarsWebAssembly.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Toolbelt.Blazor.HttpClientInterceptor.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lobson\\.nuget\\packages\\toolbelt.blazor.httpclientinterceptor\\10.1.0\\lib\\netstandard2.1\\Toolbelt.Blazor.HttpClientInterceptor.dll"
+    },
+    {
       "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\WindowsBase.dll",
       "SourceId": "HamsterWarsWebAssembly.Client",
       "SourceType": "Computed",
@@ -5268,6 +5285,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Linq.Parallel.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\obj\\Debug\\net6.0\\build-gz\\Lrh4ASqe.gz",
+      "SourceId": "HamsterWarsWebAssembly.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Toolbelt.Blazor.HttpClientInterceptor.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Toolbelt.Blazor.HttpClientInterceptor.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Toolbelt.Blazor.HttpClientInterceptor.dll"
     },
     {
       "Identity": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\obj\\Debug\\net6.0\\build-gz\\lyNfq9ly.gz",

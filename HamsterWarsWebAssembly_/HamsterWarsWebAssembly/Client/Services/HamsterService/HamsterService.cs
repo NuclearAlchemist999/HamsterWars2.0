@@ -16,8 +16,7 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
 
         public async Task AddHamster(Hamster hamster)
         {
-            var result = await _http.PostAsJsonAsync("api/hamsters", hamster);
-            await SetHamsters(result);
+            await _http.PostAsJsonAsync("api/hamsters", hamster);
         }
 
         public async Task DeleteHamster(int id)

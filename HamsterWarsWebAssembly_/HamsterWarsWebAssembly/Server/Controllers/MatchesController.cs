@@ -33,6 +33,8 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         public async Task<IActionResult> GetGame(int id)
         {
             var game = await _battleRepo.GetFighters(id);
+            if (game.Count == 0)
+                return NotFound();
             return Ok(game);
         }
        

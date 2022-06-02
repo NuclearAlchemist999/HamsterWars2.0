@@ -610,6 +610,17 @@
           }
         }
       },
+      "Toolbelt.Blazor.HttpClientInterceptor/10.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "6.0.5"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {
+            "assemblyVersion": "10.1.0.0",
+            "fileVersion": "10.1.0.0"
+          }
+        }
+      },
       "DataAccess/1.0.0": {
         "dependencies": {
           "HamsterWarsWebAssembly.Shared": "1.0.0",
@@ -625,7 +636,8 @@
         "dependencies": {
           "HamsterWarsWebAssembly.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.5",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "Toolbelt.Blazor.HttpClientInterceptor": "10.1.0"
         },
         "runtime": {
           "HamsterWarsWebAssembly.Client.dll": {}
@@ -1092,6 +1104,13 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "Toolbelt.Blazor.HttpClientInterceptor/10.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rHJzJzBm3rYchA2Lzb7Fr46Xspr2cbE4p9jIYvj60rl+x5+5oiOh3QT2Cmn/u8/zuQ914k3AepH/FdFS1UfDew==",
+      "path": "toolbelt.blazor.httpclientinterceptor/10.1.0",
+      "hashPath": "toolbelt.blazor.httpclientinterceptor.10.1.0.nupkg.sha512"
     },
     "DataAccess/1.0.0": {
       "type": "project",

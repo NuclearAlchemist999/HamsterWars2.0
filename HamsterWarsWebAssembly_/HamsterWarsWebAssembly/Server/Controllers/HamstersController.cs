@@ -24,6 +24,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         {
             var hamsters = await _hamsterRepo.GetHamsters();
             return Ok(hamsters);
+       
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetOneHamster(int id)
@@ -38,9 +39,8 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         [HttpPost]
         public async Task<IActionResult> AddHamster(Hamster hamster)
         {
-            await _hamsterRepo.AddHamster(hamster);
-
-            return Ok(await _hamsterRepo.GetHamsters());
+            var hamstero =  await _hamsterRepo.AddHamster(hamster);
+            return Ok(hamstero);
         }
 
         [HttpPut("{id}")]
