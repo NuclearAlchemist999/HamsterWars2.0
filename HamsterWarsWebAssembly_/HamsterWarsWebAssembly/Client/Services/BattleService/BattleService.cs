@@ -31,5 +31,25 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
             if (result != null)
                 Fighters = result;
         }
+
+        public async Task BattleWinner(int id)
+        {
+            var result = await _http.GetFromJsonAsync<List<JoinModel>>($"api/matchwinners/{id}");
+            if (result != null)
+                Fighters = result;
+        }
+
+        public async Task BattleHistory()
+        {
+            var result = await _http.GetFromJsonAsync<List<JoinModel>>($"api/matches");
+            if (result != null)
+                Fighters = result;
+        }
+
+        public async Task DeleteGame(int id)
+        {
+            await _http.DeleteAsync($"api/matches/{id}");
+        }
+
     }
 }

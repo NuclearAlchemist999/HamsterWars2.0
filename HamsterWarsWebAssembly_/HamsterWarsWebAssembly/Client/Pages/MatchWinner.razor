@@ -1,0 +1,31 @@
+﻿@page "/matchwinner/{id:int}"
+@inject IBattleService _battle
+@inject IHamsterService _hamster
+
+<PageTitle>Matches won</PageTitle>
+
+<div class="battle-list-one">
+    @foreach (var hamster in _battle.Fighters)
+    {
+        @if (hamster.WinStatus == "Loser")
+        {
+            <div class="battle-item">
+                <h4 class="loser">@hamster.WinStatus</h4>
+                <p>@hamster.HamsterName</p>
+            </div>
+         }
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    int wins;
+    string name = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await _battle.BattleWinner(Id);
+    }
+
+}

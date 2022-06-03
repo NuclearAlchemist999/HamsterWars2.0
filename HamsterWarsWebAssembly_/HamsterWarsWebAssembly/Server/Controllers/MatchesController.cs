@@ -28,6 +28,13 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> BattleHistory()
+        {
+            var games = await _battleRepo.BattleHistory();
+            return Ok(games);
+        }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetGame(int id)
@@ -37,6 +44,17 @@ namespace HamsterWarsWebAssembly.Server.Controllers
                 return NotFound();
             return Ok(game);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteGame(int id)
+        {
+            var game = await _battleRepo.DeleteGame(id);
+            if (game == null)
+                return NotFound();
+
+            return Ok(game);
+        }
+
        
     }
 }

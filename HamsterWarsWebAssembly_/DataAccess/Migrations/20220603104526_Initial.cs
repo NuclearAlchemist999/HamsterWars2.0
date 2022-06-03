@@ -28,11 +28,11 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
-                    FavFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FavThing = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImgName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FavFood = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FavThing = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImgName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Wins = table.Column<int>(type: "int", nullable: false),
                     Losses = table.Column<int>(type: "int", nullable: false),
                     Games = table.Column<int>(type: "int", nullable: false)

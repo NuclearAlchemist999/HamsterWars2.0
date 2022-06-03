@@ -13,6 +13,7 @@
                <img src="@hamster.ImgName" alt="@hamster.Name">
                <p>@hamster.Name</p>     
                <button type="button" class="btn btn-danger" @onclick="(() => DeleteHamster(hamster.Id))">Delete hamster</button>
+               <button type="button" class="btn btn-primary" @onclick="(() => MatchWins(hamster.Id))">View won matches</button>
            </div> 
             
         }
@@ -38,7 +39,12 @@
     async Task DeleteHamster(int id)
     {
         await _hamster.DeleteHamster(id);
-        _nav.NavigateTo("gallery");
+        _nav.NavigateTo("gallery", true);
+    }
+
+    void MatchWins(int id)
+    {
+        _nav.NavigateTo($"matchwinner/{id}");
     }
 
 }

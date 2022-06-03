@@ -54,6 +54,24 @@ namespace Repository.HamsterRepository
         }
         public async Task<Hamster> DeleteHamster(int id)
         {
+            var games = await (from h in _context.Hamsters
+                              join hg in _context.Hamsters_Games on h.Id equals hg.HamsterId
+                              join g in _context.Games on hg.GameId equals g.Id
+                              where h.Id == id
+                              select new
+                              {
+                                  game = g
+
+                              }).ToListAsync();
+
+            if (games != null)
+            {
+                foreach (var item in games)
+                {
+                    _context.Games.Remove(item.game);
+                }
+            }
+
             var dbHamster = await GetHamster(id);
 
             if (dbHamster != null)
@@ -67,9 +85,8 @@ namespace Repository.HamsterRepository
                 {
                     File.Delete(path);
                 }
-
-                await _context.SaveChangesAsync();
             }
+            await _context.SaveChangesAsync();
             return dbHamster;
         }
 

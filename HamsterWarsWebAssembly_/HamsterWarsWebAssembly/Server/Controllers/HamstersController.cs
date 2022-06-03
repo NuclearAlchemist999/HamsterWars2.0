@@ -60,7 +60,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             if (dbHamster == null)
                 return NotFound("No hamster here.");
 
-            return Ok(await _hamsterRepo.GetHamsters());
+            return Ok(dbHamster);
         }
         [HttpGet("random")]
         public async Task<IActionResult> RandomHamsters()

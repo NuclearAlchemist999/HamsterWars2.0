@@ -66,6 +66,67 @@ namespace Repository.BattleRepository
 
         }
 
+        public async Task<List<JoinModel>> BattleWinner(int id)
+        {
+
+            var games = (from hh in _context.Hamsters
+                     join hgg in _context.Hamsters_Games on hh.Id equals hgg.HamsterId
+                     join gg in _context.Games on hgg.GameId equals gg.Id
+                     where hgg.HamsterId == id && hgg.WinStatus == "Winner"
+                     select gg.Id);
+
+            var hamsters = await (from g in _context.Games
+                              join hg in _context.Hamsters_Games on g.Id equals hg.GameId
+                              join h in _context.Hamsters on hg.HamsterId equals h.Id
+
+                              where games.Contains(g.Id)
+                              select new JoinModel
+                              {
+                                  GameId = g.Id,
+                                  HamsterName = h.Name,
+                                  WinStatus = hg.WinStatus
+
+
+                              }).OrderBy(g => g.GameId).ToListAsync();
+
+            return hamsters;
+
+        }
+
+        public async Task<List<JoinModel>> BattleHistory()
+        {
+            
+            var games = await (from h in _context.Hamsters
+
+                                join hg in _context.Hamsters_Games on h.Id equals hg.HamsterId
+                                join g in _context.Games on hg.GameId equals g.Id
+
+                                select new JoinModel
+                                {
+                                    GameId = g.Id,
+                                    HamsterName = h.Name,
+                                    WinStatus = hg.WinStatus
+
+
+                                }).OrderByDescending(g => g.GameId).ToListAsync();
+
+            return games;
+            
+        }
+
+        public async Task<Game> DeleteGame(int id)
+        {
+            var dbGame = await _context.Games.FindAsync(id);
+
+            if (dbGame != null)
+            {
+                _context.Games.Remove(dbGame);
+                await _context.SaveChangesAsync();
+            }
+
+            return dbGame;
+
+        }
 
     }
 }

@@ -21,8 +21,7 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
 
         public async Task DeleteHamster(int id)
         {
-            var result = await _http.DeleteAsync($"api/hamsters/{id}");
-            await SetHamsters(result);
+            await _http.DeleteAsync($"api/hamsters/{id}");
         }
 
         private async Task SetHamsters(HttpResponseMessage result)
