@@ -24,12 +24,6 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
             await _http.DeleteAsync($"api/hamsters/{id}");
         }
 
-        private async Task SetHamsters(HttpResponseMessage result)
-        {
-            var response = await result.Content.ReadFromJsonAsync<List<Hamster>>();
-            Hamsters = response;
-        }
-
         public async Task<Hamster> GetHamster(int id)
         {
             var result = await _http.GetFromJsonAsync<Hamster>($"api/hamsters/{id}");

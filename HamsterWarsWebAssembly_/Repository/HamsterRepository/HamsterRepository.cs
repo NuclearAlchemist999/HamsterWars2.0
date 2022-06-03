@@ -66,9 +66,9 @@ namespace Repository.HamsterRepository
 
             if (games != null)
             {
-                foreach (var item in games)
+                foreach (var game in games)
                 {
-                    _context.Games.Remove(item.game);
+                    _context.Games.Remove(game.game);
                 }
             }
 

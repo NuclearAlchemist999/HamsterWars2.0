@@ -107,6 +107,14 @@ a, .btn-link {
     gap: 2rem;
 }
 
+.one-hamster-container {
+    display: grid;
+    grid-template-columns: repeat(1, 370px);
+    margin: 2rem auto;
+    justify-content: center;
+    gap: 1.7rem;
+}
+
 .gallery-top {
     text-align: center;
 }

@@ -12,6 +12,8 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
             _http = http;
         }
         public List<JoinModel> Fighters { get; set; } = new List<JoinModel>();
+        public List<PercentModel> PercentWin { get; set; } = new List<PercentModel>();
+        public List<PercentModel> PercentLoss { get; set; } = new List<PercentModel>();
 
         public async Task<int> AddGame()
         {
@@ -49,6 +51,12 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
         public async Task DeleteGame(int id)
         {
             await _http.DeleteAsync($"api/matches/{id}");
+        }
+        public async Task TopFive()
+        {
+            var result = await _http.GetFromJsonAsync<List<PercentModel>>($"api/winners");
+            if (result != null)
+                PercentWin = result;
         }
 
     }

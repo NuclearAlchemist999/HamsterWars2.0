@@ -200,15 +200,15 @@
       "mscorlib.dll": "sha256-ghlJNtzzYlKIliGPuf0A0Yu6dmLycSx3F9uyeddFb\/g=",
       "netstandard.dll": "sha256-qpOz\/RBwhlIYfaE2GDEmjiproxkvSf2b9GeqHxvH+lg=",
       "System.Private.CoreLib.dll": "sha256-sfzSZ3YKC2rpF77TVOKLuPgQag93QXr9U4AUc9d\/LKA=",
-      "HamsterWarsWebAssembly.Shared.dll": "sha256-6C1oSLKKF3rlg49cMluw0AjNM\/LQtFk7dv3sB5YMNFM=",
-      "HamsterWarsWebAssembly.Client.dll": "sha256-b93tG8yE4iIOIgWT9UFQlDXBIxhhVN8OEobF18TkA5A="
+      "HamsterWarsWebAssembly.Shared.dll": "sha256-P6\/SoWanye7h9fxUf6Lvf1Vw4jUCdcGsHEHRf3Sf7FI=",
+      "HamsterWarsWebAssembly.Client.dll": "sha256-TpaTLuUTGFH9Q2Kzs25SEcTSG+prbwt+A0eAqVzTGsc="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "HamsterWarsWebAssembly.Shared.pdb": "sha256-QfdJxdPivIOlS1hE1xS7gTvrTn10MU3R6at8nFcHn9Q=",
-      "HamsterWarsWebAssembly.Client.pdb": "sha256-ods6uyCYEOQP2sexRGO8YtDKF60r45GwIqRnLJiy5Ys="
+      "HamsterWarsWebAssembly.Shared.pdb": "sha256-+Gn3TEmT3ncXvt3v9laSXTsIH+ZkjOf2D9vHVxKJjak=",
+      "HamsterWarsWebAssembly.Client.pdb": "sha256-Yeg1IXA8X3Moi8lVhAalJn28GOSVKukfKi8aW200DXw="
     },
     "runtime": {
       "dotnet.6.0.5.9z5m8g8hua.js": "sha256-783uOt0jgblQfP6Yz5TJeuW2xxtl6UHZQPngZtCz79U=",
