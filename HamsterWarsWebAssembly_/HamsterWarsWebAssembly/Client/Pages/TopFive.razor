@@ -12,6 +12,23 @@
                 <img src="@hamster.ImgName" alt="@hamster.Name">
                 <p>@hamster.Name</p>
                 <p>Wins: @hamster.WinPercentRate%</p>
+                <p>Games: @hamster.Games</p>
+                <p>Wins: @hamster.Wins</p>
+                <p>Losses: @hamster.Losses</p>
+            </div>
+        }
+    </div>
+    <div class="one-hamster-container">
+        <h2>Bottom list</h2>
+        @foreach (var hamster in _battle.PercentLoss)
+        {
+            <div class="hamster-item">
+                <img src="@hamster.ImgName" alt="@hamster.Name">
+                <p>@hamster.Name</p>
+                <p>Losses: @hamster.LossPercentRate%</p>
+                <p>Games: @hamster.Games</p>
+                <p>Wins: @hamster.Wins</p>
+                <p>Losses: @hamster.Losses</p>
             </div>
         }
     </div>
@@ -22,7 +39,7 @@
     protected override async Task OnInitializedAsync()
     {
         await _battle.TopFive();
-      
+        await _battle.BottomFive();
     }
 
 }

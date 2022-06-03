@@ -6,6 +6,7 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
     {
         List<JoinModel> Fighters { get; set; }
         List<PercentModel> PercentWin { get; set; }
+        List<PercentModel> PercentLoss { get; set; }
         Task<int> AddGame();
         Task GetGame(int id);
         Task AddFighter(HamsterGame hamster);
@@ -13,5 +14,6 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
         Task BattleHistory();
         Task DeleteGame(int id);
         Task TopFive();
+        Task BottomFive();
     }
 }

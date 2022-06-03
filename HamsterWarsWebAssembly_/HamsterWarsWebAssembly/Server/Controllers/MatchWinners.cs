@@ -19,7 +19,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         {
             var losers = await _battleRepo.BattleWinner(id);
             if (losers.Count == 0)
-                return BadRequest();
+                return NotFound();
             
             return Ok(losers);
         }

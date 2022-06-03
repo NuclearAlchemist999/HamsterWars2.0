@@ -1,6 +1,5 @@
 ﻿@page "/matchwinner/{id:int}"
 @inject IBattleService _battle
-@inject IHamsterService _hamster
 
 <PageTitle>Matches won</PageTitle>
 
@@ -20,8 +19,6 @@
 @code {
     [Parameter]
     public int Id { get; set; }
-    int wins;
-    string name = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {

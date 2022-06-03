@@ -150,5 +150,27 @@ namespace Repository.BattleRepository
               
         }
 
+        public async Task<List<PercentModel>> LoadBottomFive()
+        {
+            
+            var hamsters = await (from h in _context.Hamsters
+                                    .Where(l => l.Losses >= 3)
+                                    .OrderByDescending(h => ((double)h.Losses / (double)h.Games))
+                                    .ThenByDescending(h => h.Losses)
+                                    select new PercentModel
+                                    {
+                                        LossPercentRate = Math.Round(((double)h.Losses / (double)h.Games) * 100, 2),
+                                        Name = h.Name,
+                                        ImgName = h.ImgName,
+                                        Wins = h.Wins,
+                                        Losses = h.Losses,
+                                        Games = h.Games
+
+                                    }).Take(5).ToListAsync();
+
+            return hamsters;
+           
+        }
+
     }
 }

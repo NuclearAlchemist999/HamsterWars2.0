@@ -2,6 +2,7 @@
 @inject IHamsterService _hamster
 @inject NavigationManager _nav
 
+<PageTitle>Gallery</PageTitle>
 <div class="gallery-top">
     <h2>Hamsters</h2>
     <button class="btn btn-primary" @onclick="AddHamster">Add hamster</button>
@@ -10,9 +11,8 @@
         @foreach (var hamster in _hamster.Hamsters)
         {
            <div class="hamster-item">
-               <img src="@hamster.ImgName" alt="@hamster.Name">
+               <img src="@hamster.ImgName" alt="@hamster.Name" @onclick="(() => HamsterFacts(hamster.Id))">
                <p>@hamster.Name</p>     
-               <button type="button" class="btn btn-danger" @onclick="(() => DeleteHamster(hamster.Id))">Delete hamster</button>
                <button type="button" class="btn btn-primary" @onclick="(() => MatchWins(hamster.Id))">View won matches</button>
            </div> 
             
@@ -26,20 +26,14 @@
         await _hamster.GetHamsters();
     }
 
-    void ShowHamster(int id)
-    {
-        _nav.NavigateTo($"hamster/{id}");
-    }
-
     void AddHamster()
     {
         _nav.NavigateTo("/hamster");
     }
 
-    async Task DeleteHamster(int id)
+    void HamsterFacts(int id)
     {
-        await _hamster.DeleteHamster(id);
-        _nav.NavigateTo("gallery", true);
+        _nav.NavigateTo($"hamsterinfo/{id}");
     }
 
     void MatchWins(int id)

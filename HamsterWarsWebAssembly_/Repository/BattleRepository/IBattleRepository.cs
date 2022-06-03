@@ -11,5 +11,6 @@ namespace Repository.BattleRepository
         Task<List<JoinModel>> BattleHistory();
         Task<Game> DeleteGame(int id);
         Task<List<PercentModel>> LoadTopFive();
+        Task<List<PercentModel>> LoadBottomFive();
     }
 }

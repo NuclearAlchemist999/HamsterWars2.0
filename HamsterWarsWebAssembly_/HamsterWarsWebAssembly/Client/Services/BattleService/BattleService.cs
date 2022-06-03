@@ -59,5 +59,12 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
                 PercentWin = result;
         }
 
+        public async Task BottomFive()
+        {
+            var result = await _http.GetFromJsonAsync<List<PercentModel>>($"api/losers");
+            if (result != null)
+                PercentLoss = result;
+        }
+
     }
 }
