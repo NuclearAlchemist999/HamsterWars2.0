@@ -33,7 +33,8 @@
     <br />
     <div>
         <label for="image">Image</label>
-          <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName" accept=".png,.jpg,.jpeg"></InputFile> 
+          <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName" accept=".png,.jpg,.jpeg"></InputFile>
+          <ValidationMessage For="@(()=> hamster.ImgName)" />
     </div>
     
     <br />
@@ -50,16 +51,17 @@
 
     private long maxFileSize = 1024 * 500;
     IBrowserFile selectedFile;
-    private string? fileName;
-    private string? dbFileName;
+    private string? fullFileName;
     private string errorMessage = string.Empty;
 
     private void LoadFile(InputFileChangeEventArgs e)
     {
         selectedFile = e.File;
-        fileName = e.File.Name;
-        dbFileName = string.Format(@"{0}.jpg", Guid.NewGuid());
-        string dbPath = $"/images/{dbFileName}";
+        string fileName = e.File.Name;
+        string fileExtension = fileName.Split(".").Last();
+        string dbFileName = string.Format(@"{0}", Guid.NewGuid());
+        fullFileName = dbFileName + "." + fileExtension;
+        string dbPath = $"/images/{fullFileName}";
         hamster.ImgName = dbPath;
 
     }
@@ -67,7 +69,7 @@
     bool CheckValidTypes()
     {
         string[] vaildTypes = { "png", "jpg", "jpeg" };
-        string fileExtension = fileName.Split('.').Last();
+        string fileExtension = selectedFile.Name.Split('.').Last();
         return vaildTypes.Contains(fileExtension.ToLower());
         
     }
@@ -79,7 +81,7 @@
             await selectedFile.OpenReadStream().CopyToAsync(ms);
             var uploadedFile = new UploadedFile();
          
-            uploadedFile.FileName = dbFileName;
+            uploadedFile.FileName = fullFileName;
             uploadedFile.FileContent = ms.ToArray();
            
             await _http.PostAsJsonAsync<UploadedFile>("api/fileupload", uploadedFile);
@@ -90,15 +92,7 @@
 
     async Task HandleSubmit()
     {
-        if (fileName == null)
-        {
-            errorMessage = "Please select a file.";
-            return;
-        }
-
-        bool isValid = CheckValidTypes();
-   
-        if (!isValid)
+        if (!CheckValidTypes())
         {
             errorMessage = "The file type is not allowed.";
             return;
@@ -109,8 +103,7 @@
             errorMessage = "The file is too large.";
             return;
         }
-
-
+     
         SaveFile();
         await _hamster.AddHamster(hamster);
         
