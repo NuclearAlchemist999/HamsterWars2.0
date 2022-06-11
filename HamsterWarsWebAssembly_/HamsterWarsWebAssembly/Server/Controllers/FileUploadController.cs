@@ -1,4 +1,5 @@
 ﻿using HamsterWarsWebAssembly.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             _env = env;
         }
 
-        [HttpPost]
+        [HttpPost, Authorize(Roles = "Admin")]
         public async Task<IActionResult> PostFile(UploadedFile uploadedFile)
         {
             string[] validTypes = { "jpg", "jpeg", "png" };

@@ -1,5 +1,6 @@
 ﻿using DataAccess.Data;
 using HamsterWarsWebAssembly.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -36,7 +37,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             return Ok(hamster);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddHamster(Hamster hamster)
         {
             var hamstero =  await _hamsterRepo.AddHamster(hamster);
@@ -52,7 +53,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             return Ok(); 
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteHamster(int id)
         {
             var dbHamster = await _hamsterRepo.DeleteHamster(id);

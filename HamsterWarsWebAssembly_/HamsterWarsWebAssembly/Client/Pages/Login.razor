@@ -1,0 +1,60 @@
+﻿@page "/login"
+@inject HttpClient _http
+@inject AuthenticationStateProvider _authState
+@inject ILocalStorageService _localStorage
+@inject NavigationManager _nav
+
+<EditForm Model="@user" OnValidSubmit="@HandleLogin">
+    
+    <DataAnnotationsValidator />
+    
+    <div>
+        <label for="username">Username</label>
+        <InputText id="username" @bind-Value="user.Username" class="form-control"/>
+        <ValidationMessage For="@(() => user.Username)"/>
+    </div>
+    <div>
+    <label for="password">Password</label>
+        <InputText id="password" @bind-Value="user.Password" type="password" class="form-control"/>
+        <ValidationMessage For="@(() => user.Password)"/>
+    </div>
+    <p style="color: firebrick; font-size: 1.3rem;">@errorMessage</p>
+    
+    <button type="submit" class="btn btn-primary">Log in</button>
+   
+</EditForm>
+
+
+
+@code {
+
+    UserDto user = new UserDto();
+    private string errorMessage = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var value = await _localStorage.GetItemAsync<string>("token");
+
+        if (!string.IsNullOrEmpty(value))
+        {
+            _nav.NavigateTo("/");
+        }
+    }
+
+    async Task HandleLogin()
+    {
+        var result = await _http.PostAsJsonAsync("api/auth/login", user);
+        var token = await result.Content.ReadAsStringAsync();
+
+        Console.WriteLine(token);
+        if (!result.IsSuccessStatusCode)
+        {
+            errorMessage = "Invalid credentials.";
+            return;
+        }
+        
+        await _localStorage.SetItemAsync("token", token);
+        await _authState.GetAuthenticationStateAsync();
+        _nav.NavigateTo("/");
+    }
+}

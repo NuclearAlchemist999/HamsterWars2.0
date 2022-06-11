@@ -1,4 +1,5 @@
 ﻿using HamsterWarsWebAssembly.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository.BattleRepository;
@@ -45,7 +46,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             return Ok(game);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteGame(int id)
         {
             var game = await _battleRepo.DeleteGame(id);

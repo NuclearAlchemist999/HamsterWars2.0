@@ -2,6 +2,7 @@
 @inject IHamsterService _hamster
 @inject NavigationManager _nav
 @inject HttpClient _http
+@attribute [Authorize(Roles = "Admin")]
 
 
 <PageTitle>Add hamster</PageTitle>
@@ -53,6 +54,7 @@
     IBrowserFile selectedFile;
     private string? fullFileName;
     private string errorMessage = string.Empty;
+    UploadedFile uploadedFile = new UploadedFile();
 
     private void LoadFile(InputFileChangeEventArgs e)
     {
@@ -79,14 +81,9 @@
         using (var ms = new MemoryStream())
         {
             await selectedFile.OpenReadStream().CopyToAsync(ms);
-            var uploadedFile = new UploadedFile();
-         
             uploadedFile.FileName = fullFileName;
-            uploadedFile.FileContent = ms.ToArray();
-           
-            await _http.PostAsJsonAsync<UploadedFile>("api/fileupload", uploadedFile);
+            uploadedFile.FileContent = ms.ToArray();      
         }
-      
     }
 
 
@@ -105,6 +102,11 @@
         }
      
         SaveFile();
+
+        var result = await _http.PostAsJsonAsync<UploadedFile>("api/fileupload", uploadedFile);
+       
+        if (!result.IsSuccessStatusCode) return;
+
         await _hamster.AddHamster(hamster);
         
         _nav.NavigateTo("gallery");

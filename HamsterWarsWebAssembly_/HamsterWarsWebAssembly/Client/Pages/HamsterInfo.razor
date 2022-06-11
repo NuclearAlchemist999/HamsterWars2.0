@@ -13,9 +13,13 @@
             <p>Favourite thing: @hamster.FavThing</p>
         </div>
     </div>
-    <div class="gallery-top">
-         <button type="button" class="btn btn-danger" @onclick="DeleteHamster">Delete hamster</button>
-    </div>
+    <AuthorizeView Roles="Admin">
+        <Authorized>
+            <div class="gallery-top">
+                 <button type="button" class="btn btn-danger" @onclick="DeleteHamster">Delete hamster</button>
+            </div>
+        </Authorized>
+    </AuthorizeView>
    
   
 @code {

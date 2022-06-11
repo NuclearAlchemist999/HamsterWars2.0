@@ -13,7 +13,11 @@
             <p>@battle.HamsterName</p>    
                 @if (battle.WinStatus == "Winner")
                 {
-                  <button type="button" class="btn btn-danger" @onclick="(() => RemoveGame(battle.GameId))">x</button>  
+                  <AuthorizeView Roles="Admin">
+                      <Authorized>
+                        <button type="button" class="btn btn-danger" @onclick="(() => RemoveGame(battle.GameId))">x</button>  
+                      </Authorized>
+                  </AuthorizeView>
                 }   
        </div>
     }

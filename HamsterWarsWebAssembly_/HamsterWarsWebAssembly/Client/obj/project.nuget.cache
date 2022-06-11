@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "IVXEWwo2lJikmDiQ/HIg5u0qAugYhIuNrr8uDXzmdGJ8tnS711QejmUPe+7OYin7bzeEWEBJ2GEn6hD0ICopUg==",
+  "dgSpecHash": "UncA7QLkv17gevZpgTY7svs2eWukmURymULLRxNZCgJ4omcDXUjWywA45UxvlWusnGx3bgfHUCvlFbvswBj6Zw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\HamsterWarsWebAssembly.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Lobson\\.nuget\\packages\\blazored.localstorage\\4.2.0\\blazored.localstorage.4.2.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.5\\microsoft.aspnetcore.authorization.6.0.5.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.5\\microsoft.aspnetcore.components.6.0.5.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.5\\microsoft.aspnetcore.components.analyzers.6.0.5.nupkg.sha512",
+    "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\6.0.5\\microsoft.aspnetcore.components.authorization.6.0.5.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.5\\microsoft.aspnetcore.components.forms.6.0.5.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.5\\microsoft.aspnetcore.components.web.6.0.5.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.5\\microsoft.aspnetcore.components.webassembly.6.0.5.nupkg.sha512",

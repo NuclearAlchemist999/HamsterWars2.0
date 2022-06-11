@@ -9,8 +9,10 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "Blazored.LocalStorage.dll": "sha256-6RRoYeDP3d0xabXmcCMF66wXeJlXVPem28Trs8sQiis=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-ThsHz1KsYfsXW9VgMdflnhR6Na8ZrPnzhWrKZkjl6XE=",
       "Microsoft.AspNetCore.Components.dll": "sha256-ramVDoksT5qhSqsyvuf70+Xk6LzKiCAjtzl9xVwIdV4=",
+      "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-2Z5WfTe4x24Bj\/ugF6Ij5NIVDpuBp42X5t5XIlL2cE8=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-zqsvvyL\/zGYEvF\/crCJ8Dt1fpz7KA7V0WEJBp\/9\/Z3w=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-sS1yMtnuQwl7ojhNaD0R8ObmmKTreSfkFAatoIeOKPw=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-ff+PbIVunuYwtTBsmbmdSZ\/VpZrr7Jwh3MzQDeFTNQ8=",
@@ -201,14 +203,14 @@
       "netstandard.dll": "sha256-qpOz\/RBwhlIYfaE2GDEmjiproxkvSf2b9GeqHxvH+lg=",
       "System.Private.CoreLib.dll": "sha256-sfzSZ3YKC2rpF77TVOKLuPgQag93QXr9U4AUc9d\/LKA=",
       "HamsterWarsWebAssembly.Shared.dll": "sha256-pf8Hv1XlkTvnq8ysd1ZdCpdELF7VWM\/c70Olju7csFA=",
-      "HamsterWarsWebAssembly.Client.dll": "sha256-mEvrDjJZ6cfpGnotzODhxoAjNjQe5XJbZhCHOzXJMU4="
+      "HamsterWarsWebAssembly.Client.dll": "sha256-eGZe6pqdOfldA0gYWjzCTia85AuJD1d4jdbjkOxBvm4="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "HamsterWarsWebAssembly.Shared.pdb": "sha256-D90GwtqAgBrqGZgH9FU++DiCpWTSkF2nlNdY7JZnzPU=",
-      "HamsterWarsWebAssembly.Client.pdb": "sha256-KeraNGiOKeIP6Up+gVGb57lZOaP8dHWNrrwMCSRzYdY="
+      "HamsterWarsWebAssembly.Client.pdb": "sha256-uBmqg\/HPAOd\/qjL+FhPCV137tlmGKd4C7Myj5BfqUbA="
     },
     "runtime": {
       "dotnet.6.0.5.9z5m8g8hua.js": "sha256-783uOt0jgblQfP6Yz5TJeuW2xxtl6UHZQPngZtCz79U=",
