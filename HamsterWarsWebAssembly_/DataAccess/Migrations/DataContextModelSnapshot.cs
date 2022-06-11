@@ -86,7 +86,7 @@ namespace DataAccess.Migrations
                             FavFood = "Peanuts",
                             FavThing = "Wheel",
                             Games = 0,
-                            ImgName = "/Content/images/savedImages/hamster-1.jpg",
+                            ImgName = "/images/hamster-1.jpg",
                             Losses = 0,
                             Name = "Gregory",
                             Wins = 0
@@ -98,7 +98,7 @@ namespace DataAccess.Migrations
                             FavFood = "Seeds",
                             FavThing = "Water bottle",
                             Games = 0,
-                            ImgName = "/Content/images/savedImages/hamster-2.jpg",
+                            ImgName = "/images/hamster-2.jpg",
                             Losses = 0,
                             Name = "Mr Smith",
                             Wins = 0
@@ -110,7 +110,7 @@ namespace DataAccess.Migrations
                             FavFood = "Bacon",
                             FavThing = "Corner",
                             Games = 0,
-                            ImgName = "/Content/images/savedImages/hamster-3.jpg",
+                            ImgName = "/images/hamster-3.jpg",
                             Losses = 0,
                             Name = "Valeria",
                             Wins = 0
@@ -122,7 +122,7 @@ namespace DataAccess.Migrations
                             FavFood = "Salad",
                             FavThing = "Sleeping",
                             Games = 0,
-                            ImgName = "/Content/images/savedImages/hamster-4.jpg",
+                            ImgName = "/images/hamster-4.jpg",
                             Losses = 0,
                             Name = "Schrödinger",
                             Wins = 0
@@ -134,7 +134,7 @@ namespace DataAccess.Migrations
                             FavFood = "Carrot",
                             FavThing = "Walking",
                             Games = 0,
-                            ImgName = "/Content/images/savedImages/hamster-5.jpg",
+                            ImgName = "/images/hamster-5.jpg",
                             Losses = 0,
                             Name = "Menlo",
                             Wins = 0
@@ -165,6 +165,31 @@ namespace DataAccess.Migrations
                     b.HasIndex("HamsterId");
 
                     b.ToTable("Hamsters_Games");
+                });
+
+            modelBuilder.Entity("HamsterWarsWebAssembly.Shared.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte[]>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("HamsterWarsWebAssembly.Shared.Models.HamsterGame", b =>

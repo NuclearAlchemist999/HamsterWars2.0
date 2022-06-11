@@ -7,9 +7,7 @@ namespace DataAccess.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Hamster>().HasData(
@@ -20,11 +18,10 @@ namespace DataAccess.Data
                     Age = 2,
                     FavFood = "Peanuts",
                     FavThing = "Wheel",
-                    ImgName = "/Content/images/savedImages/hamster-1.jpg",
+                    ImgName = "/images/hamster-1.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
-
                 },
                 new Hamster
                 {
@@ -33,11 +30,10 @@ namespace DataAccess.Data
                     Age = 2,
                     FavFood = "Seeds",
                     FavThing = "Water bottle",
-                    ImgName = "/Content/images/savedImages/hamster-2.jpg",
+                    ImgName = "/images/hamster-2.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
-
                 },
                 new Hamster
                 {
@@ -46,11 +42,10 @@ namespace DataAccess.Data
                     Age = 1,
                     FavFood = "Bacon",
                     FavThing = "Corner",
-                    ImgName = "/Content/images/savedImages/hamster-3.jpg",
+                    ImgName = "/images/hamster-3.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
-
                 },
                 new Hamster
                 {
@@ -59,11 +54,10 @@ namespace DataAccess.Data
                     Age = 2,
                     FavFood = "Salad",
                     FavThing = "Sleeping",
-                    ImgName = "/Content/images/savedImages/hamster-4.jpg",
+                    ImgName = "/images/hamster-4.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
-
                 },
                 new Hamster
                 {
@@ -72,18 +66,15 @@ namespace DataAccess.Data
                     Age = 1,
                     FavFood = "Carrot",
                     FavThing = "Walking",
-                    ImgName = "/Content/images/savedImages/hamster-5.jpg",
+                    ImgName = "/images/hamster-5.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
-
                 });
         }
-
         public DbSet<Hamster> Hamsters { get; set; }
         public DbSet<HamsterGame> Hamsters_Games { get; set; }
         public DbSet<Game> Games { get; set; }
-
-
+        public DbSet<User> Users { get; set; }
     }
 }
