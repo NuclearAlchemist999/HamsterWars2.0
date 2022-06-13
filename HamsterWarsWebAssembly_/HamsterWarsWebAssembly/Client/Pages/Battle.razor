@@ -36,7 +36,7 @@
             <p>Name: @hamster.Name</p>
             <p>Age: @hamster.Age</p>
             <p>Favourite food: @hamster.FavFood</p>
-            <p>Favourite thing: @hamster.FavThing</p>
+            <p>Favourite thing: @hamster.Loves</p>
         </div>
     }
 </div>
@@ -61,9 +61,7 @@
         }
 
         await _hamster.GetRandomHamsters();
-
     }
-
 
     async Task UpdatePoints(int winnerId)
     {
@@ -78,7 +76,7 @@
         };
 
         await _hamster.UpdateHamster(request1, loser.Id);
-        await _battle.AddFighter(request1);
+        await _battle.AddFighterAndGame(request1);
         
         var request2 = new HamsterGame
         {
@@ -87,9 +85,8 @@
             WinStatus = "Winner"
         };
         await _hamster.UpdateHamster(request2, winnerId);
-        await _battle.AddFighter(request2);
+        await _battle.AddFighterAndGame(request2);
 
         _nav.NavigateTo($"/battle/{gameId}", true);
     }
-
 }

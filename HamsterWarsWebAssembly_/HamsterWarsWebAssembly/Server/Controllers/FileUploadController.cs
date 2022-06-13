@@ -21,6 +21,15 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         [HttpPost, Authorize(Roles = "Admin")]
         public async Task<IActionResult> PostFile(UploadedFile uploadedFile)
         {
+            if (uploadedFile.FileContent == null)
+            {
+                return BadRequest("No file.");
+            }
+            if (uploadedFile.FileContent.Length > 501760)
+            {
+                return BadRequest("The size of the file is more than 502 kb.");
+              
+            }
             string[] validTypes = { "jpg", "jpeg", "png" };
 
             string fileExtension = uploadedFile.FileName.Split(".").Last();
@@ -30,21 +39,11 @@ namespace HamsterWarsWebAssembly.Server.Controllers
                 return BadRequest("The file does not have an extension or it is not an image.");
             }
 
-            if(uploadedFile.FileContent.Length > 512000)
-            {
-                return BadRequest("The size of file is more than 512 kb.");
-            }
-
-
             var path = $"wwwroot/images/{uploadedFile.FileName}";
             await using var fs = new FileStream(path, FileMode.Create);
             fs.Write(uploadedFile.FileContent, 0, uploadedFile.FileContent.Length);
             return new CreatedResult(_env.WebRootPath, uploadedFile.FileName);
-
-            
         }
-
     }
-
 }
 

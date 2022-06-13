@@ -10,7 +10,7 @@
             <p>Name: @hamster.Name</p>
             <p>Age: @hamster.Age</p>
             <p>Favourite food: @hamster.FavFood</p>
-            <p>Favourite thing: @hamster.FavThing</p>
+            <p>Favourite thing: @hamster.Loves</p>
         </div>
     </div>
     <AuthorizeView Roles="Admin">
@@ -20,8 +20,7 @@
             </div>
         </Authorized>
     </AuthorizeView>
-   
-  
+    
 @code {
     Hamster hamster = new Hamster();
 
@@ -38,6 +37,4 @@
         await _hamster.DeleteHamster(hamster.Id);
         _nav.NavigateTo("gallery");
     }
-
-
 }

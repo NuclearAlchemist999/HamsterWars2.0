@@ -41,9 +41,9 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             {
                 return BadRequest("Username already exists.");
             }
-            var hasCharacters = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{10,20}$");
+            var haveCharacters = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{10,20}$");
 
-            if (!hasCharacters.IsMatch(request.Password))
+            if (!haveCharacters.IsMatch(request.Password))
             {
                 return BadRequest("At least 10 to 20 characters, including at least one number and one capital letter.");
             }
@@ -60,7 +60,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
 
             if (user == null)
             {
-                return BadRequest("User not found.");
+                return NotFound("User not found.");
             }
 
             if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
@@ -96,8 +96,6 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             return jwt;
 
         }
-
-
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new HMACSHA512())

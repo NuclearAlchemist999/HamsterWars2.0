@@ -27,17 +27,19 @@ namespace Repository.BattleRepository
 
         }
 
-        public async Task AddFighter(HamsterGame hamster)
+        public async Task<HamsterGame> AddFighterAndGame(HamsterGame request)
         {
-            var fighter = new HamsterGame
+            var fighterAndGame = new HamsterGame
             {
-                HamsterId = hamster.HamsterId,
-                GameId = hamster.GameId,
-                WinStatus = hamster.WinStatus
+                HamsterId = request.HamsterId,
+                GameId = request.GameId,
+                WinStatus = request.WinStatus
             };
 
-            _context.Hamsters_Games.Add(fighter);
+            _context.Hamsters_Games.Add(fighterAndGame);
             await _context.SaveChangesAsync();
+
+            return fighterAndGame;
         }
 
 
@@ -51,13 +53,15 @@ namespace Repository.BattleRepository
                               where g.Id == id
                               select new JoinModel
                               {
+                                  GameId = g.Id,
                                   HamsterName = h.Name,
                                   Wins = h.Wins,
                                   Losses = h.Losses,
                                   Games = h.Games,
                                   HamsterId = h.Id,
                                   ImgName = h.ImgName,
-                                  WinStatus = hg.WinStatus
+                                  WinStatus = hg.WinStatus,
+                                  TimeStamp = g.TimeStamp
 
                               }).ToListAsync();
             
@@ -65,7 +69,7 @@ namespace Repository.BattleRepository
             return fighters;
 
         }
-
+        // Get the games and hamsters that a hamster with a requested id has defeated.
         public async Task<List<JoinModel>> BattleWinner(int id)
         {
 
@@ -79,15 +83,21 @@ namespace Repository.BattleRepository
                               join hg in _context.Hamsters_Games on g.Id equals hg.GameId
                               join h in _context.Hamsters on hg.HamsterId equals h.Id
 
-                              where games.Contains(g.Id)
+                              where games.Contains(g.Id) && hg.WinStatus == "Loser"
                               select new JoinModel
                               {
                                   GameId = g.Id,
                                   HamsterName = h.Name,
-                                  WinStatus = hg.WinStatus
+                                  Wins = h.Wins,
+                                  Losses = h.Losses,
+                                  Games = h.Games,
+                                  HamsterId = h.Id,
+                                  ImgName = h.ImgName,
+                                  WinStatus = hg.WinStatus,
+                                  TimeStamp = g.TimeStamp
 
 
-                              }).OrderBy(g => g.GameId).ToListAsync();
+                              }).OrderByDescending(g => g.GameId).ToListAsync();
 
             return hamsters;
 
@@ -105,7 +115,13 @@ namespace Repository.BattleRepository
                                 {
                                     GameId = g.Id,
                                     HamsterName = h.Name,
-                                    WinStatus = hg.WinStatus
+                                    Wins = h.Wins,
+                                    Losses = h.Losses,
+                                    Games = h.Games,
+                                    HamsterId = h.Id,
+                                    ImgName = h.ImgName,
+                                    WinStatus = hg.WinStatus,
+                                    TimeStamp = g.TimeStamp
 
 
                                 }).OrderByDescending(g => g.GameId).ToListAsync();
@@ -138,11 +154,13 @@ namespace Repository.BattleRepository
                                 select new PercentModel
                                 {
                                     WinPercentRate = Math.Round(((double)h.Wins / (double)h.Games) * 100, 2),
+                                    LossPercentRate = Math.Round(((double)h.Losses / (double)h.Games) * 100, 2),
                                     Name = h.Name,
                                     ImgName = h.ImgName,
                                     Wins = h.Wins,
                                     Losses = h.Losses,
-                                    Games = h.Games
+                                    Games = h.Games,
+
 
                                 }).Take(5).ToListAsync();
 
@@ -159,6 +177,7 @@ namespace Repository.BattleRepository
                                     .ThenByDescending(h => h.Losses)
                                     select new PercentModel
                                     {
+                                        WinPercentRate = Math.Round(((double)h.Wins / (double)h.Games) * 100, 2),
                                         LossPercentRate = Math.Round(((double)h.Losses / (double)h.Games) * 100, 2),
                                         Name = h.Name,
                                         ImgName = h.ImgName,

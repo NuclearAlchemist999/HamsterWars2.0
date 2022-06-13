@@ -23,9 +23,8 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllHamsters()
         {
-            var hamsters = await _hamsterRepo.GetHamsters();
+            var hamsters = await _hamsterRepo.GetHamsters(); 
             return Ok(hamsters);
-       
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetOneHamster(int id)
@@ -50,7 +49,15 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             var hamster = await _hamsterRepo.UpdateHamster(request, id);
             if (hamster == null)
                 return NotFound("No hamster here.");
-            return Ok(); 
+            return Ok(hamster); 
+        }
+        [HttpPut("hamster/{id}"), Authorize(Roles = "Admin")]
+        public async Task<IActionResult> UpdateWholeHamster(Hamster request, int id)
+        {
+            var hamster = await _hamsterRepo.UpdateWholeHamster(request, id);
+            if (hamster == null)
+                return NotFound("No hamster here.");
+            return Ok(hamster);
         }
 
         [HttpDelete("{id}"), Authorize(Roles = "Admin")]

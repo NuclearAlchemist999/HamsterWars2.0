@@ -16,17 +16,17 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             _battleRepo = battleRepo;
         }
 
-        [HttpPost]
+        [HttpPost("game")]
         public async Task<IActionResult> AddGame()
         {
             var id = await _battleRepo.AddGame();
             return Ok(id);
         }
-        [HttpPost("Fighter")]
-        public async Task<IActionResult> AddFighter(HamsterGame hamster)
+        [HttpPost]
+        public async Task<IActionResult> AddFighterAndGame(HamsterGame request)
         {
-            await _battleRepo.AddFighter(hamster);
-            return Ok();
+            var hamsterAndGame = await _battleRepo.AddFighterAndGame(request);
+            return Ok(hamsterAndGame);
         }
 
         [HttpGet]
@@ -36,13 +36,12 @@ namespace HamsterWarsWebAssembly.Server.Controllers
             return Ok(games);
         }
 
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetGame(int id)
         {
             var game = await _battleRepo.GetFighters(id);
             if (game.Count == 0)
-                return NotFound();
+                return NotFound("No game here.");
             return Ok(game);
         }
 
@@ -55,7 +54,5 @@ namespace HamsterWarsWebAssembly.Server.Controllers
 
             return Ok(game);
         }
-
-       
     }
 }

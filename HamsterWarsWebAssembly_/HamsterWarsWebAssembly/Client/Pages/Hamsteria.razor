@@ -4,7 +4,6 @@
 @inject HttpClient _http
 @attribute [Authorize(Roles = "Admin")]
 
-
 <PageTitle>Add hamster</PageTitle>
 
 <h3>Add a new hamster</h3>
@@ -28,8 +27,8 @@
     </div>
     <div>
         <label for="fav-thing">Favourite thing</label>
-        <InputText id="fav-thing" @bind-Value="hamster.FavThing" class="form-control"></InputText>
-        <ValidationMessage For="@(()=> hamster.FavThing)" />
+        <InputText id="fav-thing" @bind-Value="hamster.Loves" class="form-control"></InputText>
+        <ValidationMessage For="@(()=> hamster.Loves)" />
     </div>
     <br />
     <div>
@@ -37,11 +36,9 @@
           <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName" accept=".png,.jpg,.jpeg"></InputFile>
           <ValidationMessage For="@(()=> hamster.ImgName)" />
     </div>
-    
     <br />
     <p style="color: firebrick; font-size: 1.3rem;">@errorMessage</p>
     <button type="submit" class="btn btn-primary">Save hamster</button>
-    
 </EditForm>
 
 @code {
@@ -50,11 +47,11 @@
 
     Hamster hamster = new Hamster();
 
-    private long maxFileSize = 1024 * 500;
+    private long maxFileSize = 1024 * 490;
     IBrowserFile selectedFile;
     private string? fullFileName;
     private string errorMessage = string.Empty;
-    UploadedFile uploadedFile = new UploadedFile();
+
 
     private void LoadFile(InputFileChangeEventArgs e)
     {
@@ -73,19 +70,27 @@
         string[] vaildTypes = { "png", "jpg", "jpeg" };
         string fileExtension = selectedFile.Name.Split('.').Last();
         return vaildTypes.Contains(fileExtension.ToLower());
-        
+
     }
 
-    private async void SaveFile()
+    private async Task SaveFile()
     {
         using (var ms = new MemoryStream())
         {
             await selectedFile.OpenReadStream().CopyToAsync(ms);
+            UploadedFile uploadedFile = new UploadedFile();
             uploadedFile.FileName = fullFileName;
-            uploadedFile.FileContent = ms.ToArray();      
-        }
-    }
+            uploadedFile.FileContent = ms.ToArray();     
 
+            var result = await _http.PostAsJsonAsync<UploadedFile>("api/fileupload", uploadedFile);
+            var token = await result.Content.ReadAsStringAsync();
+            Console.WriteLine(token);
+            if (!result.IsSuccessStatusCode) return; 
+            
+        }
+
+        await _hamster.AddHamster(hamster);
+    }
 
     async Task HandleSubmit()
     {
@@ -100,16 +105,13 @@
             errorMessage = "The file is too large.";
             return;
         }
-     
-        SaveFile();
-
-        var result = await _http.PostAsJsonAsync<UploadedFile>("api/fileupload", uploadedFile);
-       
-        if (!result.IsSuccessStatusCode) return;
-
-        await _hamster.AddHamster(hamster);
+        if (selectedFile != null)
+        {
+           await SaveFile();
+            
+           _nav.NavigateTo("gallery");
+        }         
         
-        _nav.NavigateTo("gallery");
     }
 
 }

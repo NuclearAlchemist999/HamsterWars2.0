@@ -4,7 +4,6 @@ using System.Security.Claims;
 using System.Text.Json;
 using System.Net.Http.Headers;
 
-
 namespace HamsterWarsWebAssembly.Client.Auth
 {
     public class CustomAuthStateProvider : AuthenticationStateProvider

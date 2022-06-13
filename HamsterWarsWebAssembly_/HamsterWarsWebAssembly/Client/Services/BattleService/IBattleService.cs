@@ -9,7 +9,7 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
         List<PercentModel> PercentLoss { get; set; }
         Task<int> AddGame();
         Task GetGame(int id);
-        Task AddFighter(HamsterGame hamster);
+        Task AddFighterAndGame(HamsterGame request);
         Task BattleWinner(int id);
         Task BattleHistory();
         Task DeleteGame(int id);

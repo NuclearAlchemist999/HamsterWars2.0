@@ -32,6 +32,7 @@ builder.Services.AddScoped<IHamsterRepository, HamsterRepository>();
 builder.Services.AddScoped<IBattleRepository, BattleRepository>();
 
 var app = builder.Build();
+
 app.ConfigureExceptionHandler();
 
 //Configure the HTTP request pipeline.

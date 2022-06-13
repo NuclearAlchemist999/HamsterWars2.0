@@ -3,6 +3,10 @@
 @inject NavigationManager _nav
 
 <PageTitle>Gallery</PageTitle>
+@if (_hamster.Hamsters.Count == 0)
+{
+    <h2>No hamsters yet.</h2>
+}
 <div class="gallery-top">
     <h2>Hamsters</h2>
     <AuthorizeView Roles="Admin">
@@ -19,9 +23,10 @@
                <p>@hamster.Name</p>     
                <button type="button" class="btn btn-primary" @onclick="(() => MatchWins(hamster.Id))">View won matches</button>
            </div> 
-            
         }
 </div>
+
+
 
 @code {    
 
@@ -42,7 +47,7 @@
 
     void MatchWins(int id)
     {
-        _nav.NavigateTo($"matchwinner/{id}");
+        _nav.NavigateTo($"matchWinners/{id}");
     }
 
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220611132039_Initial")]
+    [Migration("20220613125927_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,10 +55,6 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FavThing")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Games")
                         .HasColumnType("int");
 
@@ -68,6 +64,10 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("Losses")
                         .HasColumnType("int");
+
+                    b.Property<string>("Loves")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -86,11 +86,11 @@ namespace DataAccess.Migrations
                             Id = 1,
                             Age = 2,
                             FavFood = "Peanuts",
-                            FavThing = "Wheel",
                             Games = 0,
-                            ImgName = "/images/hamster-1.jpg",
+                            ImgName = "/images/hamster-15.jpg",
                             Losses = 0,
-                            Name = "Gregory",
+                            Loves = "Wheel",
+                            Name = "Emperor",
                             Wins = 0
                         },
                         new
@@ -98,11 +98,11 @@ namespace DataAccess.Migrations
                             Id = 2,
                             Age = 2,
                             FavFood = "Seeds",
-                            FavThing = "Water bottle",
                             Games = 0,
-                            ImgName = "/images/hamster-2.jpg",
+                            ImgName = "/images/hamster-25.jpg",
                             Losses = 0,
-                            Name = "Mr Smith",
+                            Loves = "Water bottle",
+                            Name = "Arcturus",
                             Wins = 0
                         },
                         new
@@ -110,11 +110,11 @@ namespace DataAccess.Migrations
                             Id = 3,
                             Age = 1,
                             FavFood = "Bacon",
-                            FavThing = "Corner",
                             Games = 0,
-                            ImgName = "/images/hamster-3.jpg",
+                            ImgName = "/images/hamster-24.jpg",
                             Losses = 0,
-                            Name = "Valeria",
+                            Loves = "Corner",
+                            Name = "Dissection",
                             Wins = 0
                         },
                         new
@@ -122,11 +122,11 @@ namespace DataAccess.Migrations
                             Id = 4,
                             Age = 2,
                             FavFood = "Salad",
-                            FavThing = "Sleeping",
                             Games = 0,
-                            ImgName = "/images/hamster-4.jpg",
+                            ImgName = "/images/hamster-14.jpg",
                             Losses = 0,
-                            Name = "Schrödinger",
+                            Loves = "Sleeping",
+                            Name = "Urfaust",
                             Wins = 0
                         },
                         new
@@ -134,11 +134,47 @@ namespace DataAccess.Migrations
                             Id = 5,
                             Age = 1,
                             FavFood = "Carrot",
-                            FavThing = "Walking",
                             Games = 0,
-                            ImgName = "/images/hamster-5.jpg",
+                            ImgName = "/images/hamster-35.jpg",
                             Losses = 0,
-                            Name = "Menlo",
+                            Loves = "Walking",
+                            Name = "Burzum",
+                            Wins = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Age = 4,
+                            FavFood = "Beans",
+                            Games = 0,
+                            ImgName = "/images/hamster-23.jpg",
+                            Losses = 0,
+                            Loves = "Dominating",
+                            Name = "Morbid Angel",
+                            Wins = 0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Age = 2,
+                            FavFood = "Meat",
+                            Games = 0,
+                            ImgName = "/images/hamster-38.jpg",
+                            Losses = 0,
+                            Loves = "Biting",
+                            Name = "Fleshgod Apocalypse",
+                            Wins = 0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Age = 3,
+                            FavFood = "Apple",
+                            Games = 0,
+                            ImgName = "/images/hamster-40.jpg",
+                            Losses = 0,
+                            Loves = "Jumping",
+                            Name = "Carcass",
                             Wins = 0
                         });
                 });

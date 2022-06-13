@@ -3,6 +3,10 @@
 @inject NavigationManager _nav
 
 <PageTitle>Battle history</PageTitle>
+@if (_battle.Fighters.Count == 0)
+{
+    <h2>No history yet.</h2>
+}
 
 <div class="battle-list">
 

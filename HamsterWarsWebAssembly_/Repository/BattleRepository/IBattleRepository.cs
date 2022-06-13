@@ -6,7 +6,7 @@ namespace Repository.BattleRepository
     {
         Task<int> AddGame();
         Task<List<JoinModel>> GetFighters(int id);
-        Task AddFighter(HamsterGame hamster);
+        Task<HamsterGame> AddFighterAndGame(HamsterGame request);
         Task<List<JoinModel>> BattleWinner(int id);
         Task<List<JoinModel>> BattleHistory();
         Task<Game> DeleteGame(int id);

@@ -17,13 +17,13 @@ namespace HamsterWarsWebAssembly.Client.Services.BattleService
 
         public async Task<int> AddGame()
         {
-            var response =  await _http.PostAsJsonAsync("api/matches", new {});
+            var response =  await _http.PostAsJsonAsync("api/matches/game", new {});
             return await response.Content.ReadFromJsonAsync<int>();    
         }
 
-        public async Task AddFighter(HamsterGame hamster)
+        public async Task AddFighterAndGame(HamsterGame request)
         {
-           await _http.PostAsJsonAsync("api/matches/fighter", hamster);
+           await _http.PostAsJsonAsync("api/matches", request);
           
         }
 

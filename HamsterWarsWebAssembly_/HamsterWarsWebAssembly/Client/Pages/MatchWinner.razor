@@ -1,4 +1,4 @@
-﻿@page "/matchwinner/{id:int}"
+﻿@page "/matchWinners/{id:int}"
 @inject IBattleService _battle
 
 <PageTitle>Matches won</PageTitle>
@@ -6,13 +6,10 @@
 <div class="battle-list-one">
     @foreach (var hamster in _battle.Fighters)
     {
-        @if (hamster.WinStatus == "Loser")
-        {
-            <div class="battle-item">
-                <h4 class="loser">@hamster.WinStatus</h4>
-                <p>@hamster.HamsterName</p>
-            </div>
-         }
+        <div class="battle-item">
+            <h4 class="loser">@hamster.WinStatus</h4>
+            <p>@hamster.HamsterName</p>
+        </div>    
     }
 </div>
 

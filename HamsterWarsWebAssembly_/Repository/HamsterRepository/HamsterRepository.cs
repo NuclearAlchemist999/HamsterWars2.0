@@ -52,6 +52,29 @@ namespace Repository.HamsterRepository
             return dbHamster;
             
         }
+
+        public async Task<Hamster> UpdateWholeHamster(Hamster request, int id)
+        {
+            var dbHamster = await GetHamster(id);
+
+            if (dbHamster != null)
+            {
+                dbHamster.Id = request.Id;
+                dbHamster.Name = request.Name;
+                dbHamster.Age = request.Age;
+                dbHamster.FavFood = request.FavFood;
+                dbHamster.Loves = request.Loves;
+                dbHamster.ImgName = request.ImgName;
+                dbHamster.Wins = request.Wins;
+                dbHamster.Losses = request.Losses;  
+                dbHamster.Games = request.Games;
+            }
+           
+            await _context.SaveChangesAsync();
+
+            return dbHamster;
+
+        }
         public async Task<Hamster> DeleteHamster(int id)
         {
             var games = await (from h in _context.Hamsters

@@ -19,7 +19,7 @@ namespace HamsterWarsWebAssembly.Server.Controllers
         {
             var losers = await _battleRepo.BattleWinner(id);
             if (losers.Count == 0)
-                return NotFound();
+                return NotFound("No wins yet or battle history has been deleted.");
             
             return Ok(losers);
         }

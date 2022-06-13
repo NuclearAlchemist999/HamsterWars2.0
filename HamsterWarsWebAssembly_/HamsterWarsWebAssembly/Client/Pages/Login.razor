@@ -4,10 +4,9 @@
 @inject ILocalStorageService _localStorage
 @inject NavigationManager _nav
 
+<PageTitle>Log in</PageTitle>
 <EditForm Model="@user" OnValidSubmit="@HandleLogin">
-    
     <DataAnnotationsValidator />
-    
     <div>
         <label for="username">Username</label>
         <InputText id="username" @bind-Value="user.Username" class="form-control"/>
@@ -19,12 +18,8 @@
         <ValidationMessage For="@(() => user.Password)"/>
     </div>
     <p style="color: firebrick; font-size: 1.3rem;">@errorMessage</p>
-    
     <button type="submit" class="btn btn-primary">Log in</button>
-   
 </EditForm>
-
-
 
 @code {
 

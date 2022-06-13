@@ -31,7 +31,7 @@ namespace DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     FavFood = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FavThing = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Loves = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImgName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Wins = table.Column<int>(type: "int", nullable: false),
                     Losses = table.Column<int>(type: "int", nullable: false),
@@ -86,14 +86,17 @@ namespace DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Hamsters",
-                columns: new[] { "Id", "Age", "FavFood", "FavThing", "Games", "ImgName", "Losses", "Name", "Wins" },
+                columns: new[] { "Id", "Age", "FavFood", "Games", "ImgName", "Losses", "Loves", "Name", "Wins" },
                 values: new object[,]
                 {
-                    { 1, 2, "Peanuts", "Wheel", 0, "/images/hamster-1.jpg", 0, "Gregory", 0 },
-                    { 2, 2, "Seeds", "Water bottle", 0, "/images/hamster-2.jpg", 0, "Mr Smith", 0 },
-                    { 3, 1, "Bacon", "Corner", 0, "/images/hamster-3.jpg", 0, "Valeria", 0 },
-                    { 4, 2, "Salad", "Sleeping", 0, "/images/hamster-4.jpg", 0, "Schrödinger", 0 },
-                    { 5, 1, "Carrot", "Walking", 0, "/images/hamster-5.jpg", 0, "Menlo", 0 }
+                    { 1, 2, "Peanuts", 0, "/images/hamster-15.jpg", 0, "Wheel", "Emperor", 0 },
+                    { 2, 2, "Seeds", 0, "/images/hamster-25.jpg", 0, "Water bottle", "Arcturus", 0 },
+                    { 3, 1, "Bacon", 0, "/images/hamster-24.jpg", 0, "Corner", "Dissection", 0 },
+                    { 4, 2, "Salad", 0, "/images/hamster-14.jpg", 0, "Sleeping", "Urfaust", 0 },
+                    { 5, 1, "Carrot", 0, "/images/hamster-35.jpg", 0, "Walking", "Burzum", 0 },
+                    { 6, 4, "Beans", 0, "/images/hamster-23.jpg", 0, "Dominating", "Morbid Angel", 0 },
+                    { 7, 2, "Meat", 0, "/images/hamster-38.jpg", 0, "Biting", "Fleshgod Apocalypse", 0 },
+                    { 8, 3, "Apple", 0, "/images/hamster-40.jpg", 0, "Jumping", "Carcass", 0 }
                 });
 
             migrationBuilder.CreateIndex(

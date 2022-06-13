@@ -2,7 +2,12 @@
 @inject IBattleService _battle
 
 <PageTitle>Statistics</PageTitle>
-
+@if (_battle.PercentLoss.Count == 0 || _battle.PercentWin.Count == 0)
+{
+    <h2>No top list yet.</h2>
+}
+else
+{
 <div class="battle-container">
     <div class="one-hamster-container">
         <h2>Top list</h2>
@@ -33,7 +38,7 @@
         }
     </div>
 </div>
-
+}
 @code {
 
     protected override async Task OnInitializedAsync()
