@@ -83,21 +83,26 @@ a, .btn-link {
     transition: all 0.3s ease;
     background-color: rgb(55, 40, 85);
     border-radius: 8px;
+    margin: 2rem 0;
 }
 
-    .hamster-item img {
-        width: 370px;
-        height: 300px;
-        border-radius: 8px 8px 0px 0px;
-    }
+.hamster-item.gallery {
+    margin: 0.4rem 0;
+}
 
-    .hamster-item button {
-        margin-bottom: 1.2rem;
-    }
+.hamster-item img {
+    width: 370px;
+    height: 300px;
+    border-radius: 8px 8px 0px 0px;
+}
 
-    .hamster-item:hover {
-        transform: translateY(-5px);
-    }
+.hamster-item button {
+    margin-bottom: 1.2rem;
+}
+
+.hamster-item:hover {
+    transform: translateY(-5px);
+}
 
 .battle-container {
     display: grid;
