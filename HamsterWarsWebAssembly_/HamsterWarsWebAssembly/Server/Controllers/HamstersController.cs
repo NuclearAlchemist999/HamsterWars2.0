@@ -1,11 +1,8 @@
-﻿using DataAccess.Data;
-using HamsterWarsWebAssembly.Shared.Models;
+﻿using HamsterWarsWebAssembly.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Repository.HamsterRepository;
-using System.Text.Json;
+
 
 namespace HamsterWarsWebAssembly.Server.Controllers
 {

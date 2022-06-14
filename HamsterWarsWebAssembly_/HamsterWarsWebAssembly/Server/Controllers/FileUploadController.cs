@@ -1,9 +1,7 @@
 ﻿using HamsterWarsWebAssembly.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http.Headers;
+
 
 namespace HamsterWarsWebAssembly.Server.Controllers
 {

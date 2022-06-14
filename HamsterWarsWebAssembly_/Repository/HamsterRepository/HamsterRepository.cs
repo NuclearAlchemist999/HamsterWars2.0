@@ -87,14 +87,12 @@ namespace Repository.HamsterRepository
 
                               }).ToListAsync();
 
-            if (games != null)
+          
+            foreach (var game in games)
             {
-                foreach (var game in games)
-                {
-                    _context.Games.Remove(game.game);
-                }
+                _context.Games.Remove(game.game);
             }
-
+            
             var dbHamster = await GetHamster(id);
 
             if (dbHamster != null)

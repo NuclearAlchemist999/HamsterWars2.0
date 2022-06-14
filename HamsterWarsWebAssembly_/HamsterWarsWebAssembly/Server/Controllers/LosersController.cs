@@ -1,6 +1,4 @@
-﻿using HamsterWarsWebAssembly.Shared.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Repository.BattleRepository;
 
 namespace HamsterWarsWebAssembly.Server.Controllers
