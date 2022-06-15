@@ -14,7 +14,5 @@ namespace HamsterWarsWebAssembly.Shared.Models
         public int Games { get; set; }   
         public string? ImgName { get; set; }
         
-        
-
     }
 }

@@ -41,7 +41,6 @@
         var result = await _http.PostAsJsonAsync("api/auth/login", user);
         var token = await result.Content.ReadAsStringAsync();
 
-        Console.WriteLine(token);
         if (!result.IsSuccessStatusCode)
         {
             errorMessage = "Invalid credentials.";

@@ -37,7 +37,7 @@
           <ValidationMessage For="@(()=> hamster.ImgName)" />
     </div>
     <br />
-    <p style="color: firebrick; font-size: 1.3rem;">@errorMessage</p>
+    <p class="loser">@errorMessage</p>
     <button type="submit" class="btn btn-primary">Save hamster</button>
 </EditForm>
 
@@ -83,12 +83,9 @@
             uploadedFile.FileContent = ms.ToArray();     
 
             var result = await _http.PostAsJsonAsync<UploadedFile>("api/fileupload", uploadedFile);
-            var token = await result.Content.ReadAsStringAsync();
-            Console.WriteLine(token);
-            if (!result.IsSuccessStatusCode) return; 
-            
+            if (!result.IsSuccessStatusCode) return;        
         }
-
+        
         await _hamster.AddHamster(hamster);
     }
 
