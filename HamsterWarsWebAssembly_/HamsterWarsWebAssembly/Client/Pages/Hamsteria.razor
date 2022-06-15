@@ -12,22 +12,22 @@
     <DataAnnotationsValidator />
     <div>
         <label for="name">Name</label>
-        <InputText id="name" @bind-Value="hamster.Name" class="form-control"></InputText>
+        <InputText id="name" @bind-Value="hamster.Name" class="form-control" style="width: 500px"></InputText>
         <ValidationMessage For="@(()=> hamster.Name)" />
     </div>
     <div>
         <label for="age">Age</label>
-        <InputNumber id="age" @bind-Value="hamster.Age" class="form-control"></InputNumber>
+        <InputNumber id="age" @bind-Value="hamster.Age" class="form-control" style="width: 500px"></InputNumber>
         <ValidationMessage For="@(()=> hamster.Age)" />
     </div>
     <div>
         <label for="fav-food">Favourite food</label>
-        <InputText id="fav-food" @bind-Value="hamster.FavFood" class="form-control"></InputText>
+        <InputText id="fav-food" @bind-Value="hamster.FavFood" class="form-control" style="width: 500px"></InputText>
         <ValidationMessage For="@(()=> hamster.FavFood)" />
     </div>
     <div>
         <label for="fav-thing">Favourite thing</label>
-        <InputText id="fav-thing" @bind-Value="hamster.Loves" class="form-control"></InputText>
+        <InputText id="fav-thing" @bind-Value="hamster.Loves" class="form-control" style="width: 500px"></InputText>
         <ValidationMessage For="@(()=> hamster.Loves)" />
     </div>
     <br />
@@ -36,7 +36,6 @@
           <InputFile OnChange="@LoadFile" @bind-Value="hamster.ImgName" accept=".png,.jpg,.jpeg"></InputFile>
           <ValidationMessage For="@(()=> hamster.ImgName)" />
     </div>
-    <br />
     <p class="loser">@errorMessage</p>
     <button type="submit" class="btn btn-primary">Save hamster</button>
 </EditForm>

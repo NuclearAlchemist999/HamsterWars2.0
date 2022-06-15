@@ -183,6 +183,10 @@ a, .btn-link {
     color: rgb(236, 99, 84);
 }
 
-
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .hamster-container {
+        grid-template-columns: repeat(2, 370px);
+    }
+}
 
 
