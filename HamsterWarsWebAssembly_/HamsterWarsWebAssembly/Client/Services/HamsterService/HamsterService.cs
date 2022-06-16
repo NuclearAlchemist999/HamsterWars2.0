@@ -44,9 +44,9 @@ namespace HamsterWarsWebAssembly.Client.Services.HamsterService
              await _http.PutAsJsonAsync($"api/hamsters/{id}", request);
           
         }
-        public async Task GetRandomHamsters()
+        public async Task GetRandomHamsters(int number)
         {
-            var result = await _http.GetFromJsonAsync<List<Hamster>>("api/hamsters/random");
+            var result = await _http.GetFromJsonAsync<List<Hamster>>($"api/hamsters/random?number={number}");
             if (result != null)
                 Hamsters = result;
         }

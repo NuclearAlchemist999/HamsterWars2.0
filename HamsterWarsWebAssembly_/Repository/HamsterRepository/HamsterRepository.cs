@@ -111,10 +111,26 @@ namespace Repository.HamsterRepository
             return dbHamster;
         }
 
-        public async Task<List<Hamster>> GetTwoRandomHamsters()
+        public async Task<List<Hamster>> GetRandomHamsters(int number)
         {
-            var hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
+            var hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(number).ToListAsync();
             return hamsters;
+        }
+        // Just one random hamster
+        public async Task<Hamster> GetRandomHamster()
+        {
+            var hamsters = await GetHamsters();
+
+            Random rand = new Random();
+            var hamster = new Hamster();
+
+            for (int i = 0; i < hamsters.Count; i++)
+            {
+                int number = rand.Next(0, hamsters.Count);
+                hamster = hamsters[number];
+            }
+
+            return hamster;
         }
     }
 }

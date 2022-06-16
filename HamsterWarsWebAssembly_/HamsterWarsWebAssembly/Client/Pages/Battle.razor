@@ -59,8 +59,8 @@
         {
             headLine = "Battle";
         }
-
-        await _hamster.GetRandomHamsters();
+        int number = 2;
+        await _hamster.GetRandomHamsters(number);
     }
 
     async Task UpdatePoints(int winnerId)
