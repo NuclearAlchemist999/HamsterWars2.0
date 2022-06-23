@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Shared\\HamsterWarsWebAssembly.Shared.csproj",
-      "projectName": "HamsterWarsWebAssembly.Shared",
-      "projectPath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Shared\\HamsterWarsWebAssembly.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly.Test\\HamsterWarsWebAssembly.Test.csproj",
+      "projectName": "HamsterWarsWebAssembly.Test",
+      "projectPath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly.Test\\HamsterWarsWebAssembly.Test.csproj",
       "packagesPath": "C:\\Users\\Lobson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
