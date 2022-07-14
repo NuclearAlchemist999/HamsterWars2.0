@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cEdR/+Z4FVBFigkzwwbPJO5fqLOP8PWxe75v3H4Wm2IDkZHSAyd5LwRCzyAK0CgCIQLFd4YiEOZZIwpEC4m+GA==",
+  "dgSpecHash": "OgHR1m2isr6j9ZgIZ8f/h7lckIvI+3+XKNERUMHPryNAGHXemrbTzm14cv7KmLOBs+MN9EI6M5uHLcfXZ2edOw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\HamsterWarsWebAssembly\\Client\\HamsterWarsWebAssembly.Client.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "C:\\Users\\Lobson\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.5\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.5.nupkg.sha512"
+    "C:\\Users\\Lobson\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.7\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.7.nupkg.sha512"
   ],
   "logs": []
 }
