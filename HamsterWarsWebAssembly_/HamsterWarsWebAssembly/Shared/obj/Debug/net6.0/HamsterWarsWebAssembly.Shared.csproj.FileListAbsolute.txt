@@ -10,3 +10,5 @@ C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\Hamste
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\refint\HamsterWarsWebAssembly.Shared.dll
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.pdb
 C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\ref\HamsterWarsWebAssembly.Shared.dll
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\bin\Debug\net6.0\HamsterWarsWebAssembly.Shared.runtimeconfig.json
+C:\Users\Lobson\Desktop\GitProjekt\HamsterWars2.0\HamsterWarsWebAssembly_\HamsterWarsWebAssembly\Shared\obj\Debug\net6.0\HamsterWarsWebAssembly.Shared.genruntimeconfig.cache

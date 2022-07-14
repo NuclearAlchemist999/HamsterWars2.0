@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "shHRMnFGXPwsTVNDpdHhzkv89gKn/7Jbt5PyPww2Airvs4UtfcQFfj5VmN297UXYsETQ/9fVi/Uw7Vfgmo8u+g==",
-  "success": true,
+  "dgSpecHash": "WqRx8uMfQqRl1mHFhj8qEHFeMEABI8nYpLkt8AaeFisZC7QyywMqcypTk3dSczBxj1tOllnmOuf4VASfjUIkxw==",
+  "success": false,
   "projectFilePath": "C:\\Users\\Lobson\\Desktop\\GitProjekt\\HamsterWars2.0\\HamsterWarsWebAssembly_\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lobson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -48,5 +48,24 @@
     "C:\\Users\\Lobson\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\Lobson\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 6.0.7 to 6.0.5. Reference the package directly from the project to select a different version. \r\n DataAccess -> HamsterWarsWebAssembly.Shared -> Microsoft.EntityFrameworkCore (>= 6.0.7) \r\n DataAccess -> Microsoft.EntityFrameworkCore (>= 6.0.5)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.7 to 6.0.5. Reference the package directly from the project to select a different version. \r\n DataAccess -> HamsterWarsWebAssembly.Shared -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.7) \r\n DataAccess -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.5)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

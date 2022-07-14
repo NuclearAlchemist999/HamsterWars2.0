@@ -635,6 +635,10 @@
       "HamsterWarsWebAssembly.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.7"
+        },
         "compile": {
           "bin/placeholder/HamsterWarsWebAssembly.Shared.dll": {}
         },
@@ -1958,8 +1962,28 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 6.0.7 to 6.0.5. Reference the package directly from the project to select a different version. \r\n DataAccess -> HamsterWarsWebAssembly.Shared -> Microsoft.EntityFrameworkCore (>= 6.0.7) \r\n DataAccess -> Microsoft.EntityFrameworkCore (>= 6.0.5)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.7 to 6.0.5. Reference the package directly from the project to select a different version. \r\n DataAccess -> HamsterWarsWebAssembly.Shared -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.7) \r\n DataAccess -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.5)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -1,12 +1,11 @@
-using DataAccess.Data;
 using HamsterWarsWebAssembly.Server.Extensions;
+using HamsterWarsWebAssembly.Server.Repositories.AuthRepository;
+using HamsterWarsWebAssembly.Server.Repositories.BattleRepository;
+using HamsterWarsWebAssembly.Server.Repositories.HamsterRepository;
+using HamsterWarsWebAssembly.Shared.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Repository.AuthRepository;
-using Repository.BattleRepository;
-using Repository.HamsterRepository;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);

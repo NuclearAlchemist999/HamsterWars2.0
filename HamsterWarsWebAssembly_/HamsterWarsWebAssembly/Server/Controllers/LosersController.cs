@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Repository.BattleRepository;
+﻿using HamsterWarsWebAssembly.Server.Repositories.BattleRepository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HamsterWarsWebAssembly.Server.Controllers
 {

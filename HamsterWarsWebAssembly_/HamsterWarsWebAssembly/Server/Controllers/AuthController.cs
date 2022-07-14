@@ -1,6 +1,6 @@
-﻿using HamsterWarsWebAssembly.Shared.Models;
+﻿using HamsterWarsWebAssembly.Server.Repositories.AuthRepository;
+using HamsterWarsWebAssembly.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
-using Repository.AuthRepository;
 
 namespace HamsterWarsWebAssembly.Server.Controllers
 {
